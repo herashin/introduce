@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/introduce/static/css/main.22870f84.css",
+    "main.js": "/introduce/static/js/main.2c552749.js",
+    "static/js/453.32705098.chunk.js": "/introduce/static/js/453.32705098.chunk.js",
+    "static/media/job4_1.jpg": "/introduce/static/media/job4_1.6f9e80ddf5485aa3c7b4.jpg",
+    "static/media/job2_1.jpg": "/introduce/static/media/job2_1.201e81675adde1f88852.jpg",
+    "static/media/job3_1.jpg": "/introduce/static/media/job3_1.0ee50614ad40b385182d.jpg",
+    "static/media/wellcome2.webp": "/introduce/static/media/wellcome2.7c52129220ea1fcb3480.webp",
+    "static/media/section1_back.webp": "/introduce/static/media/section1_back.8c1132eba0bd39e78219.webp",
+    "static/media/job1_1.jpg": "/introduce/static/media/job1_1.a8c9af03090d19d10cfe.jpg",
+    "static/media/section1_front.png": "/introduce/static/media/section1_front.41c8e5867331c7b8fdb2.png",
+    "static/media/section2_back.png": "/introduce/static/media/section2_back.cc7164fefcafd26fca73.png",
+    "static/media/arrow.png": "/introduce/static/media/arrow.a0a887a20b2d7374be80.png",
+    "index.html": "/introduce/index.html",
+    "main.22870f84.css.map": "/introduce/static/css/main.22870f84.css.map",
+    "main.2c552749.js.map": "/introduce/static/js/main.2c552749.js.map",
+    "453.32705098.chunk.js.map": "/introduce/static/js/453.32705098.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22870f84.css",
+    "static/js/main.2c552749.js"
+  ]
+}
