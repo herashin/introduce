@@ -322,6 +322,39 @@ div[name="Inner"] {
     width: 100%; /* 배경 이미지 전체 화면 크기 */
     transform: scale(1); /* 스케일 조정 */
   }
+
+  /*  section2   */
+
+  .image_list {
+    flex-wrap: wrap;
+  }
+  .image_list li {
+    width: 40%;
+    margin-bottom: 2vw;
+  }
+  .image_list li img {
+    height: 200px;
+  }
+
+  .image_list li a {
+    font-size: 3.5vw;
+  }
+
+  .AboutMe_section3 {
+    padding-top: 1vw;
+  }
+  .AboutMe_section3 h3 {
+    margin: 0;
+    margin-bottom: 1vw;
+  }
+
+  .AboutMe_section3 .image_list {
+    flex-wrap: unset;
+    overflow: auto;
+  }
+  .AboutMe_section3 .image_list li {
+    width: 80%;
+  }
 }
 
 /* 
