@@ -1,0 +1,59 @@
+body {
+  background-color: #333;
+}
+
+.Experience_wrap {
+  color: #ddd;
+  margin-top: 10%;
+}
+
+.Experience_wrap li {
+  /* justify-content: space-around; */
+  list-style: circle; /* ㅋㅋㅋㅋ 있는게 더 예쁜듯  */
+}
+
+.Experience_box {
+  display: flex;
+  list-style: none;
+  align-items: baseline;
+}
+
+.Experience_days {
+  width: 250px;
+}
+
+.Experience_hide {
+  max-height: 0; /* 기본 높이를 0으로 설정 */
+  overflow: hidden;
+  transition: max-height 0.5s ease-out; /* 부드러운 애니메이션 */
+}
+
+/* 열렸을 때 */
+.Experience_show {
+  overflow: hidden;
+  max-height: 1000px; /* 충분히 큰 값으로 설정 */
+  transition: max-height 0.5s ease-in; /* 부드러운 애니메이션 */
+}
+
+.Experience_under_line {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Experience_under_line p {
+  width: 40%;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+}
+/* 기본 상태 */
+.Experience_under_line svg {
+  width: 50px;
+  margin: 12px 10px 0;
+  transition: transform 0.5s ease-in-out; /* 부드러운 회전 애니메이션 */
+}
+
+/* 열렸을 때 회전 */
+.rotate {
+  transform: rotate(180deg); /* 180도 회전 */
+}

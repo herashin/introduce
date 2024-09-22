@@ -1,0 +1,46 @@
+.content {
+  margin-left: 200px; /* 사이드바 넓이만큼 여백을 둠 */
+  padding: 20px;
+}
+
+/* .App {
+  display: flex;
+} */
+:root {
+  --main-purple: #d6bbfc; /* 파스텔톤 보라색 */
+  --dark-purple: #c49bfc; /* 호버 등에서 사용할 조금 더 어두운 색 */
+  --text-color: #333333; /* 텍스트 기본 색상 */
+}
+
+body {
+  /* background-color: var(--main-purple); */
+  font-weight: 400;
+  font-style: normal;
+  color: var(--text-color);
+}
+
+body,
+html {
+  font-family: "Do Hyeon", sans-serif;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+/********  반응형 구간  *******/
+/* 화면이 작아질 때 (모바일 대응) */
+@media screen and (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
+}
