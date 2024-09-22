@@ -9,6 +9,10 @@ function Header() {
     setMenuOn(!menuOn); // 메뉴 상태 토글
   };
 
+  const closeMenu = () => {
+    setMenuOn(false); // 메뉴 닫기
+  };
+
   return (
     <div>
       {/* 헤더 영역 */}
@@ -29,11 +33,15 @@ function Header() {
         </h1>
         <ul>
           <li>
-            <Link to="/">소개 (About Me)</Link>
+            <Link to="/" onClick={closeMenu}>
+              소개 (About Me)
+            </Link>
             {/* <a href="/">소개 (About Me)</a> */}
           </li>
           <li>
-            <Link to="/experience">경력 (Experience)</Link>
+            <Link to="/experience" onClick={closeMenu}>
+              경력 (Experience)
+            </Link>
             {/* <a href="/experience">경력 (Experience)</a> */}
           </li>
           <li>기술 스택 (Skills)</li>
