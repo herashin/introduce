@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "./header.module.css";
+import { Link } from "react-router-dom";
 
 function Header() {
   const [menuOn, setMenuOn] = useState(false);
@@ -28,10 +29,12 @@ function Header() {
         </h1>
         <ul>
           <li>
-            <a href="/">소개 (About Me)</a>
+            <Link to="/">소개 (About Me)</Link>
+            {/* <a href="/">소개 (About Me)</a> */}
           </li>
           <li>
-            <a href="/experience">경력 (Experience)</a>
+            <Link to="/experience">경력 (Experience)</Link>
+            {/* <a href="/experience">경력 (Experience)</a> */}
           </li>
           <li>기술 스택 (Skills)</li>
         </ul>
