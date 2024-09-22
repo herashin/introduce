@@ -259,7 +259,7 @@ div[name="Inner"] {
   }
 
   .AboutMe_top_title {
-    left: 5%; /* 타이틀 위치 */
+    left: 14%; /* 타이틀 위치 */
     font-size: 4vw; /* 작은 화면에서 폰트 크기 확대 */
     padding-top: 10px;
     top: 10%;
@@ -313,7 +313,7 @@ div[name="Inner"] {
   }
 
   .AboutMe_top_title {
-    left: 20%; /* 타이틀 위치 */
+    left: 6%; /* 타이틀 위치 */
     font-size: 5vw; /* 폰트 크기 더 크게 조정 */
     padding-top: 5px;
   }
