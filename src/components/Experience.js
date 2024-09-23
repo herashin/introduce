@@ -53,7 +53,7 @@ function Experience() {
                     <br />
                     AUI Grid
                     <br />
-                    출력물 관리 프로그램
+                    크로닉스 리포트
                     <br />
                     <hr />
                   </p>

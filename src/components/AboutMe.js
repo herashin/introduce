@@ -84,6 +84,43 @@ function AboutMe() {
       <Fullpage>
         <FullPageSections>
           <FullpageSection style={{ height: "90vh", backgroundColor: "#000" }}>
+            <div className={styled.AboutMe_q_mark}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 100"
+                width="100"
+                height="100"
+              >
+                <circle cx="50" cy="50" r="25" fill="lightgray" />
+
+                <text
+                  x="37"
+                  y="66"
+                  font-size="45"
+                  font-family="Arial"
+                  fill="#fff"
+                >
+                  ?
+                </text>
+              </svg>
+              <p className={styled.AboutMe_q_text}>
+                <span>* 이 이력서는 현재 개발 진행중입니다.</span>
+                <br />
+                이 페이지(index)에 들어간 기술
+                <br />
+                Fullpage
+                <br />
+                setTimeout
+                <br />
+                Chart.register
+                <br />
+                Media Query (모바일 지원)
+                <br />
+                IntersectionObserver
+                <br /> JAVA (예정)
+                <br />
+              </p>
+            </div>
             <section className={styled.AboutMe_section1}>
               {/* 배경 이미지 추가 */}
               <img
