@@ -245,6 +245,10 @@ div[name="Inner"] {
 
 /* 화면이 480px ~ 767px일 때 (모바일 환경) */
 @media screen and (max-width: 767px) {
+  .AboutMe_q_mark svg {
+    position: relative;
+    right: -140px;
+  }
   .AboutMe_wrap {
     padding: 10px; /* 패딩을 줄여 화면에 맞춤 */
   }

@@ -5,6 +5,7 @@ import AboutMe from "./components/AboutMe";
 import JobDetail1 from "./components/JobDetail1";
 import JobDetail2 from "./components/JobDetail2";
 import JobDetail3 from "./components/JobDetail3";
+import JobDetail4 from "./components/JobDetail4";
 import Experience from "./components/Experience";
 
 import Footer from "./components/Footer"; // Footer 컴포넌트 추가
@@ -23,6 +24,8 @@ function App() {
             <Route path="/job2" element={<JobDetail2 />} />
             {/* 두 번째 직업 페이지 */}
             <Route path="/job3" element={<JobDetail3 />} />
+            {/* 세 번째 직업 페이지 */}
+            <Route path="/job4" element={<JobDetail4 />} />
             {/* 세 번째 직업 페이지 */}
 
             <Route path="/experience" element={<Experience />} />

@@ -44,7 +44,7 @@ function Header() {
             </Link>
             {/* <a href="/experience">경력 (Experience)</a> */}
           </li>
-          <li>기술 스택 (Skills)</li>
+          <li>갤러리 (Gallery)</li>
         </ul>
       </div>
 

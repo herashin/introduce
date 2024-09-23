@@ -1,0 +1,15 @@
+.JobDetail1_wrap {
+  width: 100%;
+  margin: auto;
+  color: #ddd;
+}
+
+.JobDetail1_box1 {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #ddd;
+}
+
+.JobDetail1_box1 img {
+  max-width: 300px;
+}

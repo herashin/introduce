@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-
+import { Link } from "react-router-dom";
 import styled from "./AboutMe.module.css";
 import Fullpage, {
   FullPageSections,
@@ -160,35 +160,35 @@ function AboutMe() {
               <h3 className={styled.section2_title}>걸어온 길</h3>
               <ul className={styled.image_list}>
                 <li>
-                  <a href="/job1">
+                  <Link to="/job1">
                     <img src={require("../img/job1_1.jpg")} alt="현금호송원" />
                     <h4>하루에 수십억씩 만지는 직업</h4>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/job2">
+                  <Link to="/job2">
                     <img src={require("../img/job2_1.jpg")} alt="웹퍼블리셔" />
                     <h4>웹 퍼블리셔로의 성장</h4>
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/job3">
+                  <Link to="/job3">
                     <img
                       src={require("../img/job3_1.jpg")}
                       alt="자바클래스 수료"
                     />
                     <h4>새로운 도전</h4>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a href="/job3">
+                  <Link to="/job4">
                     <img
                       src={require("../img/job4_1.jpg")}
                       alt="자바클래스 수료"
                     />
                     <h4>자바 백엔드 개발자로의 성장</h4>
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </section>
