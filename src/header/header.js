@@ -44,7 +44,16 @@ function Header() {
             </Link>
             {/* <a href="/experience">경력 (Experience)</a> */}
           </li>
-          <li>갤러리 (Gallery)</li>
+          <li>
+            <Link to="/BoardList" onClick={closeMenu}>
+              갤러리 (Gallery)
+            </Link>
+          </li>
+          <li>
+            <Link to="/BoardSave" onClick={closeMenu}>
+              글쓰기
+            </Link>
+          </li>
         </ul>
       </div>
 

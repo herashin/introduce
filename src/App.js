@@ -8,6 +8,9 @@ import JobDetail3 from "./components/JobDetail3";
 import JobDetail4 from "./components/JobDetail4";
 import Experience from "./components/Experience";
 
+import BoardList from "./components/BoardList";
+import BoardSave from "./components/BoardSave";
+
 import Footer from "./components/Footer"; // Footer 컴포넌트 추가
 
 function App() {
@@ -29,6 +32,9 @@ function App() {
             {/* 세 번째 직업 페이지 */}
 
             <Route path="/experience" element={<Experience />} />
+
+            <Route path="/BoardList" element={<BoardList />} />
+            <Route path="/BoardSave" element={<BoardSave />} />
           </Routes>
         </div>
         <Footer /> {/* Footer 추가 */}
