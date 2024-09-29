@@ -1,14 +1,14 @@
 import React, { useState, useMemo, useRef } from "react";
-
 import styled from "./BoardSave.module.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 
 function BoardSave() {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
-  const [imageFile, setImageFile] = useState(null); // 이미지 파일 상태 추가
+  const [imageFiles, setImageFiles] = useState([]); // 이미지 파일을 배열로 관리
   const navigate = useNavigate();
   const quillRef = useRef(null);
 
@@ -20,7 +20,6 @@ function BoardSave() {
     setText(value);
   }; // 글 내용 변수 저장
 
-  // 이미지를 따로 이미지 테이블에 저장하려고 만들었음
   // 이미지 업로드 핸들러
   const imageHandler = async () => {
     const input = document.createElement("input");
@@ -31,7 +30,7 @@ function BoardSave() {
       const file = input.files?.[0];
 
       if (file) {
-        setImageFile(file); // 이미지 파일을 상태에 저장
+        setImageFiles((prevFiles) => [...prevFiles, file]); // 이미지 파일 배열에 추가
         const reader = new FileReader();
         reader.onload = () => {
           const editor = quillRef.current.getEditor();
@@ -44,7 +43,6 @@ function BoardSave() {
       }
     });
   };
-  //
 
   // 리액트 퀼로 만든 에디터 설정 공간
   const modules = useMemo(() => {
@@ -60,14 +58,18 @@ function BoardSave() {
         },
       },
     };
-  }, []); // 리액트 퀼로 만든 에디터 설정 공간
+  }, []);
 
   // 저장버튼 함수 시작
   const handleSave = async () => {
     // 게시글의 내용에서 <p> 태그 제거
     const ptageBlock = text.replace(/<\/?p>/g, "");
 
-    console.log("Sending data:", { title, content: ptageBlock }); // 서버로 보내기 전에 데이터 출력
+    console.log("Sending data:", {
+      title,
+      content: ptageBlock,
+      images: imageFiles,
+    }); // 서버로 보내기 전에 데이터 출력
 
     // FormData를 사용하여 데이터와 이미지를 함께 전송
     const formData = new FormData();
@@ -82,13 +84,13 @@ function BoardSave() {
       new Blob([JSON.stringify(postData)], { type: "application/json" })
     );
 
-    // Quill 에디터에서 사용한 이미지 파일이 있을 경우 FormData에 추가
-    if (imageFile) {
-      formData.append("image", imageFile);
-    }
+    // Quill 에디터에서 사용한 모든 이미지 파일을 FormData에 추가
+    imageFiles.forEach((file) => {
+      formData.append("images", file); // 각 이미지를 images 필드로 추가
+    });
 
     try {
-      const response = await axios.post("/api/board/SaveWithImage", formData, {
+      const response = await axios.post("/api/board/save", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -1,0 +1,38 @@
+.board_list_wrap {
+  padding: 20px;
+}
+
+.post_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.post_item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.thumbnail {
+  margin-right: 20px;
+}
+
+.thumbnail_image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.post_info h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.post_info p {
+  margin: 5px 0 0;
+  color: #666;
+}
