@@ -10,6 +10,8 @@ import Experience from "./components/Experience";
 
 import BoardList from "./components/BoardList";
 import BoardSave from "./components/BoardSave";
+import BoardDetail from "./components/BoardDetail";
+import BoardEdit from "./components/BoardEdit";
 
 import Footer from "./components/Footer"; // Footer 컴포넌트 추가
 
@@ -35,6 +37,13 @@ function App() {
 
             <Route path="/BoardList" element={<BoardList />} />
             <Route path="/BoardSave" element={<BoardSave />} />
+
+            <Route
+              path="/BoardDetail/:sequenceNumber"
+              element={<BoardDetail />}
+            />
+
+            <Route path="/BoardEdit/:sequenceNumber" element={<BoardEdit />} />
           </Routes>
         </div>
         <Footer /> {/* Footer 추가 */}

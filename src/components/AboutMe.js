@@ -160,7 +160,12 @@ function AboutMe() {
               <h3 className={styled.section2_title}>걸어온 길</h3>
               <ul className={styled.image_list}>
                 <li>
-                  <Link to="/job1">
+                  {/* <Link to="/job1">
+                    <img src={require("../img/job1_1.jpg")} alt="현금호송원" />
+                    <h4>하루에 수십억씩 만지는 직업</h4>
+                  </Link> */}
+
+                  <Link to="/BoardDetail/1">
                     <img src={require("../img/job1_1.jpg")} alt="현금호송원" />
                     <h4>하루에 수십억씩 만지는 직업</h4>
                   </Link>

@@ -1,0 +1,35 @@
+/* 게시글 수정페이지  */
+
+#BoardEdit_wrap .in_editor_form {
+  width: 70%;
+  margin: 20px auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+#BoardEdit_wrap .title_info_titles {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+}
+
+#BoardEdit_wrap .in_editor_titleInput {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 5px;
+  box-sizing: border-box;
+}
+
+#BoardEdit_wrap .in_editor {
+  border: 1px solid #ddd;
+  height: 500px;
+  overflow-y: auto;
+  border-radius: 8px;
+  box-sizing: border-box;
+}

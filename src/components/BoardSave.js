@@ -8,19 +8,15 @@ import ReactQuill from "react-quill";
 function BoardSave() {
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
-  const [imageFiles, setImageFiles] = useState([]); // 이미지 파일을 배열로 관리
+  const [imageFiles, setImageFiles] = useState([]);
+  const [password, setPassword] = useState(""); // 비밀번호 상태
   const navigate = useNavigate();
   const quillRef = useRef(null);
 
-  const handleTitleChange = (event) => {
-    setTitle(event.target.value);
-  }; // 제목 변수 저장
+  const handleTitleChange = (event) => setTitle(event.target.value);
+  const handlePasswordChange = (event) => setPassword(event.target.value);
+  const handleChange = (value) => setText(value);
 
-  const handleChange = (value) => {
-    setText(value);
-  }; // 글 내용 변수 저장
-
-  // 이미지 업로드 핸들러
   const imageHandler = async () => {
     const input = document.createElement("input");
     input.setAttribute("type", "file");
@@ -28,81 +24,82 @@ function BoardSave() {
     input.click();
     input.addEventListener("change", async () => {
       const file = input.files?.[0];
-
       if (file) {
-        setImageFiles((prevFiles) => [...prevFiles, file]); // 이미지 파일 배열에 추가
+        setImageFiles((prevFiles) => [...prevFiles, file]);
         const reader = new FileReader();
         reader.onload = () => {
           const editor = quillRef.current.getEditor();
           const range = editor.getSelection();
-          editor.insertEmbed(range.index, "image", reader.result); // 이미지를 에디터에 미리보기
+          editor.insertEmbed(range.index, "image", reader.result);
         };
         reader.readAsDataURL(file);
-      } else {
-        console.error("파일이 선택되지 않았습니다.");
       }
     });
   };
 
-  // 리액트 퀼로 만든 에디터 설정 공간
-  const modules = useMemo(() => {
-    return {
+  const modules = useMemo(
+    () => ({
       toolbar: {
         container: [
           ["image"],
           [{ header: [1, 2, 3, 4, 5, false] }],
           ["bold", "underline"],
         ],
-        handlers: {
-          image: imageHandler,
-        },
+        handlers: { image: imageHandler },
       },
-    };
-  }, []);
+    }),
+    []
+  );
 
-  // 저장버튼 함수 시작
+  // 비밀번호 확인 후 저장하는 함수
   const handleSave = async () => {
-    // 게시글의 내용에서 <p> 태그 제거
-    const ptageBlock = text.replace(/<\/?p>/g, "");
-
-    console.log("Sending data:", {
-      title,
-      content: ptageBlock,
-      images: imageFiles,
-    }); // 서버로 보내기 전에 데이터 출력
-
-    // FormData를 사용하여 데이터와 이미지를 함께 전송
-    const formData = new FormData();
-
-    // 게시글 데이터를 JSON으로 변환하여 FormData에 추가
-    const postData = {
-      title: title,
-      content: ptageBlock,
-    };
-    formData.append(
-      "data",
-      new Blob([JSON.stringify(postData)], { type: "application/json" })
-    );
-
-    // Quill 에디터에서 사용한 모든 이미지 파일을 FormData에 추가
-    imageFiles.forEach((file) => {
-      formData.append("images", file); // 각 이미지를 images 필드로 추가
-    });
+    if (!password.trim()) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
 
     try {
-      const response = await axios.post("/api/board/save", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
+      // 비밀번호 확인 요청
+      const passwordResponse = await axios.post("/api/board/check-password", {
+        password,
+        action: "write",
       });
-      console.log("Response:", response.data);
-      alert("게시글이 작성되었습니다.");
-      navigate("/BoardList");
+
+      if (passwordResponse.data.success) {
+        // 비밀번호가 일치할 때 게시글 저장
+        const ptageBlock = text.replace(/<\/?p>/g, "");
+        const formData = new FormData();
+
+        const postData = {
+          title: title,
+          content: ptageBlock,
+        };
+
+        formData.append(
+          "data",
+          new Blob([JSON.stringify(postData)], { type: "application/json" })
+        );
+        formData.append("password", password);
+        imageFiles.forEach((file) => formData.append("images", file));
+
+        const response = await axios.post("/api/board/save", formData, {
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+
+        if (response.status === 200) {
+          alert("게시글이 작성되었습니다.");
+          navigate("/BoardList");
+        } else {
+          alert("저장에 문제가 발생했습니다.");
+        }
+      } else {
+        alert("비밀번호가 일치하지 않습니다.");
+      }
     } catch (error) {
       console.error("Error saving content:", error);
+      alert("저장 중 오류가 발생했습니다.");
     }
   };
-  // 저장버튼 함수 끝
 
   return (
     <div id={styled.wrap}>
@@ -122,16 +119,21 @@ function BoardSave() {
             onChange={handleTitleChange}
           />
         </div>
-
-        <div>
-          <ReactQuill
-            ref={quillRef}
-            className={styled.in_editor}
-            value={text}
-            onChange={handleChange}
-            modules={modules}
+        <div className={styled.password_info}>
+          <span>비밀번호</span>&nbsp;&nbsp;
+          <input
+            type="password"
+            value={password}
+            onChange={handlePasswordChange}
           />
         </div>
+        <ReactQuill
+          ref={quillRef}
+          className={styled.in_editor}
+          value={text}
+          onChange={handleChange}
+          modules={modules}
+        />
         <button type="submit" className={styled.saveButton}>
           게시물 저장
         </button>

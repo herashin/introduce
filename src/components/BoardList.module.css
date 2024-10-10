@@ -1,13 +1,19 @@
 .board_list_wrap {
   padding: 20px;
+  color: #ddd;
 }
-
-.post_list {
+.board_list_wrap a {
+  color: #ddd;
+}
+.board_list_wrap .post_list {
   list-style-type: none;
   padding: 0;
 }
+.board_list_wrap h2 {
+  color: #ddd;
+}
 
-.post_item {
+.board_list_wrap .post_item {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -16,23 +22,23 @@
   border-radius: 5px;
 }
 
-.thumbnail {
+.board_list_wrap .thumbnail {
   margin-right: 20px;
 }
 
-.thumbnail_image {
+.board_list_wrap .thumbnail_image {
   width: 100px;
   height: 100px;
   object-fit: cover;
   border-radius: 5px;
 }
 
-.post_info h2 {
+.board_list_wrap .post_info h2 {
   margin: 0;
   font-size: 18px;
 }
 
-.post_info p {
+.board_list_wrap .post_info p {
   margin: 5px 0 0;
   color: #666;
 }

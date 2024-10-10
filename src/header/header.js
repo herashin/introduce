@@ -49,11 +49,11 @@ function Header() {
               갤러리 (Gallery)
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/BoardSave" onClick={closeMenu}>
               글쓰기
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
 

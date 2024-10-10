@@ -1,0 +1,116 @@
+/* 게시글 상세보기 전체 레이아웃 */
+#BoardDetail_wrap {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 5vw;
+}
+
+/* 제목 스타일 */
+#BoardDetail_wrap h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 10px;
+}
+
+/* 작성자, 날짜 등 정보 스타일 */
+#BoardDetail_wrap .info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+#BoardDetail_wrap .info span {
+  display: block;
+}
+
+/* 내용 스타일 */
+#BoardDetail_wrap .content {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  word-break: break-word; /* 긴 단어 줄바꿈 */
+  white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
+  overflow: hidden;
+}
+
+#BoardDetail_wrap .content img {
+  max-width: 100%;
+}
+
+/* #BoardDetail_wrap .edit_button,
+#BoardDetail_wrap .delete_button {
+  margin-bottom: 5vw;
+} */
+
+/*  모달 팝업 css 영역 시작  */
+#BoardDetail_wrap .modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#BoardDetail_wrap .modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+#BoardDetail_wrap .password_input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+#BoardDetail_wrap .submit_button,
+#BoardDetail_wrap .close_button {
+  margin: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+/*  모달 팝업 css 영역 끝  */
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  #BoardDetail_wrap {
+    width: 95%;
+    padding: 10px;
+  }
+
+  #BoardDetail_wrap h2 {
+    font-size: 1.5em;
+  }
+
+  #BoardDetail_wrap .info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #BoardDetail_wrap .info span {
+    margin-bottom: 5px;
+  }
+
+  #BoardDetail_wrap .content {
+    font-size: 1em;
+  }
+}
