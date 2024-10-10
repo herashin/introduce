@@ -11,11 +11,13 @@ function BoardDetail() {
   const [actionType, setActionType] = useState("");
   const navigate = useNavigate();
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     const fetchBoard = async () => {
       try {
         const response = await axios.get(
-          `/api/board/BoardDetail/${sequenceNumber}`
+          `${API_BASE_URL}/api/board/BoardDetail/${sequenceNumber}`
         );
         if (response.status === 200) {
           setBoard(response.data);
@@ -44,9 +46,12 @@ function BoardDetail() {
     }
 
     try {
-      const response = await axios.post("/api/board/check-password", {
-        password,
-      });
+      const response = await axios.post(
+        `${API_BASE_URL}/api/board/check-password`,
+        {
+          password,
+        }
+      );
 
       if (response.data === true) {
         if (actionType === "edit") {
@@ -56,7 +61,7 @@ function BoardDetail() {
           // 게시글 삭제일경우
           try {
             const deleteResponse = await axios.put(
-              `/api/board/delete/${sequenceNumber}`,
+              `${API_BASE_URL}/api/board/delete/${sequenceNumber}`,
               { password },
               { headers: { "Content-Type": "application/json" } }
             );

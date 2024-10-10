@@ -14,12 +14,14 @@ function BoardEdit() {
   const navigate = useNavigate();
   const quillRef = useRef(null);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   useEffect(() => {
     // 수정하려는 게시글 정보를 불러옴
     const fetchBoardData = async () => {
       try {
         const response = await axios.get(
-          `/api/board/BoardDetail/${sequenceNumber}`
+          `${API_BASE_URL}/api/board/BoardDetail/${sequenceNumber}`
         );
         if (response.status === 200) {
           const { title, content, images } = response.data;
@@ -114,7 +116,7 @@ function BoardEdit() {
 
     try {
       const response = await axios.put(
-        `/api/board/update/${sequenceNumber}`,
+        `${API_BASE_URL}/api/board/update/${sequenceNumber}`,
         formData,
         {
           headers: {

@@ -9,10 +9,12 @@ function BoardList() {
   const [showPasswordModal, setShowPasswordModal] = useState(false); // 비밀번호 모달 표시 여부
   const navigate = useNavigate();
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   // 서버에서 게시글 목록을 가져오는 함수
   const fetchPosts = async () => {
     try {
-      const response = await axios.get("/api/board/list");
+      const response = await axios.get(`${API_BASE_URL}/api/board/list`);
       setPosts(response.data);
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -42,10 +44,13 @@ function BoardList() {
   // 비밀번호 확인 함수
   const handlePasswordSubmit = async () => {
     try {
-      const response = await axios.post("/api/board/check-password", {
-        password,
-        action: "write", // 작업 종류 추가
-      });
+      const response = await axios.post(
+        `${API_BASE_URL}/api/board/check-password`,
+        {
+          password,
+          action: "write", // 작업 종류 추가
+        }
+      );
       if (response.data.success) {
         setShowPasswordModal(false);
         navigate("/BoardSave"); // 비밀번호 일치 시 작성 페이지로 이동
@@ -71,7 +76,7 @@ function BoardList() {
               <div className={styled.thumbnail}>
                 {post.images && post.images.length > 0 ? (
                   <img
-                    src={`http://localhost:8080/api/board${post.images[0].imageUrl}`}
+                    src={`${API_BASE_URL}/api/board${post.images[0].imageUrl}`}
                     alt="게시글 섬네일"
                     className={styled.thumbnail_image}
                   />

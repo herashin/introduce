@@ -17,6 +17,8 @@ function BoardSave() {
   const handlePasswordChange = (event) => setPassword(event.target.value);
   const handleChange = (value) => setText(value);
 
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
   const imageHandler = async () => {
     const input = document.createElement("input");
     input.setAttribute("type", "file");
@@ -60,10 +62,13 @@ function BoardSave() {
 
     try {
       // 비밀번호 확인 요청
-      const passwordResponse = await axios.post("/api/board/check-password", {
-        password,
-        action: "write",
-      });
+      const passwordResponse = await axios.post(
+        `${API_BASE_URL}/api/board/check-password`,
+        {
+          password,
+          action: "write",
+        }
+      );
 
       if (passwordResponse.data.success) {
         // 비밀번호가 일치할 때 게시글 저장
@@ -82,9 +87,13 @@ function BoardSave() {
         formData.append("password", password);
         imageFiles.forEach((file) => formData.append("images", file));
 
-        const response = await axios.post("/api/board/save", formData, {
-          headers: { "Content-Type": "multipart/form-data" },
-        });
+        const response = await axios.post(
+          `${API_BASE_URL}/api/board/save`,
+          formData,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
+        );
 
         if (response.status === 200) {
           alert("게시글이 작성되었습니다.");
