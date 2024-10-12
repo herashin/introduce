@@ -8,7 +8,7 @@ function BoardDetail() {
   const [board, setBoard] = useState(null);
   const [password, setPassword] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [actionType, setActionType] = useState("");
+  const [action, setActionType] = useState("");
   const navigate = useNavigate();
 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
@@ -54,10 +54,10 @@ function BoardDetail() {
       );
 
       if (response.data === true) {
-        if (actionType === "edit") {
+        if (action === "edit") {
           // 게시글 수정 요청일 경우 ㄱㄱ
           navigate(`/BoardEdit/${sequenceNumber}`);
-        } else if (actionType === "delete") {
+        } else if (action === "delete") {
           // 게시글 삭제일경우
           try {
             const deleteResponse = await axios.put(
