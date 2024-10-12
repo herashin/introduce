@@ -98,7 +98,8 @@ function BoardSave() {
         const postData = {
           title: title,
           content: ptageBlock,
-          imageFiles: imageFiles.map((file) => file), // 이미지 URL 리스트
+          //  imageFiles: imageFiles.map((file) => file), // 이미지 URL 리스트
+          imageFiles: imageFiles,
         };
 
         formData.append(
