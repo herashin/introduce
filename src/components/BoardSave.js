@@ -95,26 +95,42 @@ function BoardSave() {
         const ptageBlock = text.replace(/<\/?p>/g, "");
         const formData = new FormData();
 
-        const postData = {
-          title: title,
-          content: ptageBlock,
-        };
-        console.log(imageFiles);
-        formData.append(
-          "data",
-          new Blob([JSON.stringify(postData)], { type: "application/json" })
-        );
+        // 게시물 데이터를 각각 FormData에 추가
+        formData.append("title", title);
+        formData.append("content", ptageBlock);
         formData.append("password", password);
-        // 이미지 파일 URL을 JSON 문자열로 변환하여 추가
-        formData.append("imageFiles", JSON.stringify(imageFiles));
-        //imageFiles.forEach((file) => formData.append("images", file));
 
+        // 이미지 파일 URL을 각각 추가
+        imageFiles.forEach((file, index) =>
+          formData.append(`images[${index}]`, file)
+        );
+
+        // const postData = {
+        //   title: title,
+        //   content: ptageBlock,
+        // };
+        // console.log(imageFiles);
+        // formData.append(
+        //   "data",
+        //   new Blob([JSON.stringify(postData)], { type: "application/json" })
+        // );
+        // formData.append("password", password);
+        // // 이미지 파일 URL을 JSON 문자열로 변환하여 추가
+        // formData.append("imageFiles", JSON.stringify(imageFiles));
+        // //imageFiles.forEach((file) => formData.append("images", file));
+
+        // const response = await axios.post(
+        //   `${API_BASE_URL}/api/board/save`,
+        //   formData,
+        //   {
+        //     headers: { "Content-Type": "multipart/form-data" },
+        //   }
+        // );
+
+        // `Content-Type`을 지정하지 않고 FormData 전송
         const response = await axios.post(
           `${API_BASE_URL}/api/board/save`,
-          formData,
-          {
-            headers: { "Content-Type": "multipart/form-data" },
-          }
+          formData
         );
 
         if (response.status === 200) {
