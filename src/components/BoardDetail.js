@@ -54,7 +54,7 @@ function BoardDetail() {
         }
       );
 
-      if (response.data === true) {
+      if (response.data.success === true) {
         if (action === "edit") {
           // 게시글 수정 요청일 경우 ㄱㄱ
           navigate(`/BoardEdit/${sequenceNumber}`);
