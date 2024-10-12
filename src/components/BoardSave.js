@@ -48,6 +48,9 @@ function BoardSave() {
           const editor = quillRef.current.getEditor();
           const range = editor.getSelection();
           editor.insertEmbed(range.index, "image", imageUrl);
+
+          // imageFiles 배열에 이미지 URL을 추가하여 서버로 보낼 준비
+          setImageFiles((prevFiles) => [...prevFiles, imageUrl]);
         } catch (error) {
           console.error("Image upload failed:", error);
           alert("이미지 업로드에 실패했습니다.");
