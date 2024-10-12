@@ -90,25 +90,26 @@ function BoardSave() {
       );
 
       if (passwordResponse.data.success) {
-        // JSON 데이터와 이미지 파일 추가
+        // JSON 데이터와 이미지 URL 배열 추가
         const ptageBlock = text.replace(/<\/?p>/g, "");
         const formData = new FormData();
 
-        // 'data' 파트에 JSON 데이터 추가
+        // 'data'에 JSON 형태로 게시글 정보 추가
         const postData = {
           title: title,
           content: ptageBlock,
         };
-        formData.append(
-          "data",
-          new Blob([JSON.stringify(postData)], { type: "application/json" })
-        );
+        formData.append("data", JSON.stringify(postData));
         formData.append("password", password);
 
-        // 'images' 파트에 이미지 URL 추가
-        imageFiles.forEach((file) => formData.append("images", file));
+        // 'imageFiles'를 개별 URL로 추가
+        imageFiles.forEach((url) => formData.append("imageFiles", url));
 
-        console.table(formData);
+        console.log("FormData contents:");
+        for (let pair of formData.entries()) {
+          console.log(pair[0] + ", " + pair[1]);
+        }
+
         // 요청 전송
         const response = await axios.post(
           `${API_BASE_URL}/api/board/save`,
