@@ -101,7 +101,7 @@ function BoardSave() {
           //  imageFiles: imageFiles.map((file) => file), // 이미지 URL 리스트
           imageFiles: imageFiles,
         };
-
+        console.log(imageFiles);
         formData.append(
           "data",
           new Blob([JSON.stringify(postData)], { type: "application/json" })
