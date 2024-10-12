@@ -19,22 +19,39 @@ function BoardSave() {
 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
+  // 이미지 핸들러: 이미지를 서버에 업로드하고 URL을 반환 받아 에디터에 삽입
   const imageHandler = async () => {
     const input = document.createElement("input");
     input.setAttribute("type", "file");
     input.setAttribute("accept", "image/*");
     input.click();
+
     input.addEventListener("change", async () => {
       const file = input.files?.[0];
       if (file) {
-        setImageFiles((prevFiles) => [...prevFiles, file]);
-        const reader = new FileReader();
-        reader.onload = () => {
+        try {
+          // FormData를 사용해 파일을 서버에 업로드
+          const formData = new FormData();
+          formData.append("image", file);
+
+          // 이미지 업로드 API 호출
+          const response = await axios.post(
+            `${API_BASE_URL}/api/image/upload`,
+            formData,
+            {
+              headers: { "Content-Type": "multipart/form-data" },
+            }
+          );
+
+          // 서버에서 반환된 이미지 URL을 에디터에 삽입
+          const imageUrl = response.data.url;
           const editor = quillRef.current.getEditor();
           const range = editor.getSelection();
-          editor.insertEmbed(range.index, "image", reader.result);
-        };
-        reader.readAsDataURL(file);
+          editor.insertEmbed(range.index, "image", imageUrl);
+        } catch (error) {
+          console.error("Image upload failed:", error);
+          alert("이미지 업로드에 실패했습니다.");
+        }
       }
     });
   };
