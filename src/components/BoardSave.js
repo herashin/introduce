@@ -81,7 +81,6 @@ function BoardSave() {
     }
 
     try {
-      // 비밀번호 확인 요청
       const passwordResponse = await axios.post(
         `${API_BASE_URL}/api/board/check-password`,
         {
@@ -91,24 +90,31 @@ function BoardSave() {
       );
 
       if (passwordResponse.data.success) {
-        // FormData 생성 및 개별 데이터 추가
+        // JSON 데이터와 이미지 파일 추가
         const ptageBlock = text.replace(/<\/?p>/g, "");
         const formData = new FormData();
 
-        // 서버가 요구하는 필드명으로 FormData 설정
-        formData.append("title", title);
-        formData.append("content", ptageBlock);
+        // 'data' 파트에 JSON 데이터 추가
+        const postData = {
+          title: title,
+          content: ptageBlock,
+        };
+        formData.append(
+          "data",
+          new Blob([JSON.stringify(postData)], { type: "application/json" })
+        );
         formData.append("password", password);
 
-        // 이미지 URL 추가
-        imageFiles.forEach((file, index) =>
-          formData.append(`images[${index}]`, file)
-        );
+        // 'images' 파트에 이미지 URL 추가
+        imageFiles.forEach((file) => formData.append("images", file));
 
         // 요청 전송
         const response = await axios.post(
           `${API_BASE_URL}/api/board/save`,
-          formData // Content-Type 자동 설정
+          formData,
+          {
+            headers: { "Content-Type": "multipart/form-data" },
+          }
         );
 
         if (response.status === 200) {
