@@ -49,6 +49,7 @@ function BoardDetail() {
       const response = await axios.post(
         `${API_BASE_URL}/api/board/check-password`,
         {
+          action,
           password,
         }
       );
