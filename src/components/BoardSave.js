@@ -108,6 +108,7 @@ function BoardSave() {
         // 'images' 파트에 이미지 URL 추가
         imageFiles.forEach((file) => formData.append("images", file));
 
+        console.table(formData);
         // 요청 전송
         const response = await axios.post(
           `${API_BASE_URL}/api/board/save`,
