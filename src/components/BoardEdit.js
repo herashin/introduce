@@ -9,6 +9,7 @@ function BoardEdit() {
   const { sequenceNumber } = useParams(); // URL에서 게시글 sequenceNumber 가져옴
   const [text, setText] = useState("");
   const [title, setTitle] = useState("");
+  const [password, setPassword] = useState(""); // 비밀번호 상태 추가
   const [imageFiles, setImageFiles] = useState([]); // 이미지 파일을 배열로 관리
   const [existingImages, setExistingImages] = useState([]); // 기존 이미지
   const navigate = useNavigate();
@@ -40,6 +41,10 @@ function BoardEdit() {
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
   }; // 제목 변수 저장
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  }; // 비밀번호 변수 저장
 
   const handleChange = (value) => {
     setText(value);
@@ -87,6 +92,11 @@ function BoardEdit() {
 
   // 저장버튼 함수 시작
   const handleUpdate = async () => {
+    if (!password) {
+      alert("비밀번호를 입력해주세요.");
+      return;
+    }
+
     // 게시글의 내용에서 <p> 태그 제거
     const ptageBlock = text.replace(/<\/?p>/g, "");
 
@@ -94,6 +104,7 @@ function BoardEdit() {
       title,
       content: ptageBlock,
       images: imageFiles,
+      password,
     }); // 서버로 보내기 전에 데이터 출력
 
     // FormData를 사용하여 데이터와 이미지를 함께 전송
@@ -108,6 +119,9 @@ function BoardEdit() {
       "data",
       new Blob([JSON.stringify(postData)], { type: "application/json" })
     );
+
+    // 비밀번호를 FormData에 추가
+    formData.append("password", password);
 
     // Quill 에디터에서 사용한 모든 이미지 파일을 FormData에 추가
     imageFiles.forEach((file) => {
@@ -129,6 +143,7 @@ function BoardEdit() {
       navigate("/BoardList");
     } catch (error) {
       console.error("Error updating content:", error);
+      alert("수정 중 오류가 발생했습니다.");
     }
   };
   // 저장버튼 함수 끝
@@ -159,6 +174,16 @@ function BoardEdit() {
             value={text}
             onChange={handleChange}
             modules={modules}
+          />
+        </div>
+
+        <div className={styled.password_input_wrapper}>
+          <span>비밀번호</span>&nbsp;&nbsp;
+          <input
+            type="password"
+            className={styled.password_input}
+            value={password}
+            onChange={handlePasswordChange}
           />
         </div>
 
