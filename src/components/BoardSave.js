@@ -98,6 +98,7 @@ function BoardSave() {
         const postData = {
           title: title,
           content: ptageBlock,
+          imageUrls: imageFiles.map((file) => file), // 이미지 URL 리스트
         };
 
         formData.append(
@@ -105,7 +106,7 @@ function BoardSave() {
           new Blob([JSON.stringify(postData)], { type: "application/json" })
         );
         formData.append("password", password);
-        imageFiles.forEach((file) => formData.append("images", file));
+        // imageFiles.forEach((file) => formData.append("images", file));
 
         const response = await axios.post(
           `${API_BASE_URL}/api/board/save`,
