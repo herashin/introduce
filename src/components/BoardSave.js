@@ -99,7 +99,12 @@ function BoardSave() {
           title: title,
           content: ptageBlock,
         };
-        formData.append("data", JSON.stringify(postData));
+        //  formData.append("data", JSON.stringify(postData));
+        formData.append(
+          "data",
+          new Blob([JSON.stringify(postData)], { type: "application/json" })
+        );
+
         formData.append("password", password);
 
         // 'imageFiles'를 개별 URL로 추가
