@@ -76,7 +76,11 @@ function BoardList() {
               <div className={styled.thumbnail}>
                 {post.images && post.images.length > 0 ? (
                   <img
-                    src={`${API_BASE_URL}/api/board${post.images[0].imageUrl}`}
+                    src={
+                      post.images[0].imageUrl.startsWith("http")
+                        ? post.images[0].imageUrl
+                        : `${API_BASE_URL}${post.images[0].imageUrl}`
+                    }
                     alt="게시글 섬네일"
                     className={styled.thumbnail_image}
                   />
