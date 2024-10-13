@@ -105,7 +105,9 @@ function BoardSave() {
         // 'imageFiles'를 개별 URL로 추가
         imageFiles.forEach((url) => formData.append("imageFiles", url));
 
-        console.log("FormData contents:");
+        console.log("formData : " + formData);
+        console.log("imageFiles : " + imageFiles);
+
         for (let pair of formData.entries()) {
           console.log(pair[0] + ", " + pair[1]);
         }
