@@ -105,8 +105,11 @@ function BoardSave() {
         );
         formData.append("password", password);
 
-        // 'images' 파트에 이미지 URL 추가
-        imageFiles.forEach((file) => formData.append("images", file));
+        // imageFiles를 JSON 형식으로 변환하여 FormData에 추가
+        formData.append(
+          "images",
+          new Blob([JSON.stringify(imageFiles)], { type: "application/json" })
+        );
 
         console.table("formData : " + formData);
         console.table("imageFiles : " + imageFiles);
