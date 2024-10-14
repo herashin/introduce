@@ -171,13 +171,13 @@ function AboutMe() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/job2">
+                  <Link to="/BoardDetail/2">
                     <img src={require("../img/job2_1.jpg")} alt="웹퍼블리셔" />
                     <h4>웹 퍼블리셔로의 성장</h4>
                   </Link>
                 </li>
                 <li>
-                  <Link to="/job3">
+                  <Link to="/BoardDetail/3">
                     <img
                       src={require("../img/job3_1.jpg")}
                       alt="자바클래스 수료"
@@ -187,7 +187,7 @@ function AboutMe() {
                 </li>
 
                 <li>
-                  <Link to="/job4">
+                  <Link to="/BoardDetail/4">
                     <img
                       src={require("../img/job4_1.jpg")}
                       alt="자바클래스 수료"
