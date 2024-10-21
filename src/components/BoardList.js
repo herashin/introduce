@@ -84,9 +84,10 @@ function BoardList() {
         </svg>
         <p className={styled.AboutMe_q_text}>
           <span>
-            * 이 페이지는 리액트와 JAVA로 개발되었습니다.
+            * 이 페이지는 리액트와 <br />
+            JAVA로 개발되었습니다.
             <br />
-            프론트 git page에서 백엔트 cafe24 서버로 연동되어있습니다.
+            프론트 git page에서 백엔드 cafe24 서버로 연동되어있습니다.
           </span>
           <br />
           이 페이지(게시판)에 들어간 기술
