@@ -69,28 +69,41 @@ function BoardList() {
         글쓰기
       </button>
 
-      <p className={styled.AboutMe_q_text}>
-        <span>
-          * 이 페이지는 리액트와 JAVA로 개발되었습니다.
-          <br />
-          프론트 git page에서 백엔트 cafe24 서버로 연동되어있습니다.
-        </span>
-        <br />
-        이 페이지(게시판)에 들어간 기술
-        <br />
-        react-quill
-        <br />
-        useNavigate
-        <br />
-        axios
-        <br />
-        Media Query (모바일 지원)
-        <br />
-        JAVA , spring boot
-        <br />
-        <br />
-      </p>
+      <div className={styled.AboutMe_q_mark}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 100 100"
+          width="100"
+          height="100"
+        >
+          <circle cx="50" cy="50" r="25" fill="lightgray" />
 
+          <text x="37" y="66" font-size="45" font-family="Arial" fill="#fff">
+            ?
+          </text>
+        </svg>
+        <p className={styled.AboutMe_q_text}>
+          <span>
+            * 이 페이지는 리액트와 JAVA로 개발되었습니다.
+            <br />
+            프론트 git page에서 백엔트 cafe24 서버로 연동되어있습니다.
+          </span>
+          <br />
+          이 페이지(게시판)에 들어간 기술
+          <br />
+          react-quill
+          <br />
+          useNavigate
+          <br />
+          axios
+          <br />
+          Media Query (모바일 지원)
+          <br />
+          JAVA , spring boot
+          <br />
+          <br />
+        </p>
+      </div>
       <ul className={styled.post_list}>
         {posts.map((post) => (
           <li key={post.sequenceNumber} className={styled.post_item}>

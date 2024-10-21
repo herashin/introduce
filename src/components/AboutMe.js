@@ -106,7 +106,7 @@ function AboutMe() {
               <p className={styled.AboutMe_q_text}>
                 <span>
                   * 이 이력서는 프론트(git page), 백엔드 (cafe24)로
-                  로스팅되어있습니다.
+                  호스팅되어있습니다.
                 </span>
                 <br />
                 이 페이지(index)에 들어간 기술

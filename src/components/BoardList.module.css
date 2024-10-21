@@ -43,6 +43,15 @@
   color: #666;
 }
 
+.AboutMe_q_mark {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 10;
+  width: 220px;
+  height: 300px;
+  overflow: hidden;
+}
 .AboutMe_q_text {
   background-color: #ddd;
   position: relative;
