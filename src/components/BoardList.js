@@ -69,6 +69,28 @@ function BoardList() {
         글쓰기
       </button>
 
+      <p className={styled.AboutMe_q_text}>
+        <span>
+          * 이 페이지는 리액트와 JAVA로 개발되었습니다.
+          <br />
+          프론트 git page에서 백엔트 cafe24 서버로 연동되어있습니다.
+        </span>
+        <br />
+        이 페이지(게시판)에 들어간 기술
+        <br />
+        react-quill
+        <br />
+        useNavigate
+        <br />
+        axios
+        <br />
+        Media Query (모바일 지원)
+        <br />
+        JAVA , spring boot
+        <br />
+        <br />
+      </p>
+
       <ul className={styled.post_list}>
         {posts.map((post) => (
           <li key={post.sequenceNumber} className={styled.post_item}>

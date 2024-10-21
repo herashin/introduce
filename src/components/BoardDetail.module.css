@@ -113,4 +113,9 @@
   #BoardDetail_wrap .content {
     font-size: 1em;
   }
+
+  #BoardDetail_wrap .content img {
+    width: 100%;
+    max-width: 100%;
+  }
 }

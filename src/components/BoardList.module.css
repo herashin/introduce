@@ -42,3 +42,14 @@
   margin: 5px 0 0;
   color: #666;
 }
+
+.AboutMe_q_text {
+  background-color: #ddd;
+  position: relative;
+  left: -400px;
+  transition: 1s;
+}
+
+.AboutMe_q_mark:hover .AboutMe_q_text {
+  left: 0;
+}
