@@ -1,0 +1,205 @@
+/****************** section1 시작 ******************/
+.AboutMe_section1 {
+  height: 100%;
+  position: relative;
+}
+
+.AboutMe_section1 p,
+.AboutMe_section1 ul {
+  margin: 0;
+  padding: 0;
+}
+
+.AboutMe_section1_back_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* 전체 너비 */
+  object-fit: cover; /* 이미지가 영역에 맞게 채워짐 */
+  filter: blur(5px); /* 배경 이미지에 블러 효과 적용 */
+  z-index: 1;
+  transform: scale(1); /* 초기 이미지 크기 */
+  transition: transform 7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.AboutMe_section1_back_img.loaded {
+  transform: scale(1.05); /* 이미지 확대 */
+}
+
+/* 기존 이미지를 유지 */
+.AboutMe_section1_img {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  z-index: 2;
+  width: calc(30% - 70px);
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 텍스트 상자 */
+.AboutMe_text_container {
+  position: absolute;
+  z-index: 3;
+  text-align: left;
+  color: #fff;
+  left: 5%;
+  top: 15%;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.AboutMe_text_container2 {
+  position: absolute;
+  z-index: 3;
+  text-align: left;
+  color: #fff;
+  right: 30%;
+  top: 15%;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.AboutMe_text_container2 ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.AboutMe_text_container2 ul li {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.AboutMe_text_container2_img {
+  margin-right: 15px;
+}
+.AboutMe_text_container2_img svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/* 페이드 인과 함께 아래에서 위로 올라오는 효과 */
+.fade_in {
+  opacity: 0;
+  transform: translateY(20px); /* 아래에서 시작 */
+  animation: fadeInUp 2s forwards; /* 2초에 걸쳐 페이드 인 및 위로 이동 */
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* 아래에서 시작 */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* 원래 위치로 */
+  }
+}
+
+/* 화살표 애니메이션 */
+.arrow {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* 화살표 크기 조정 */
+  opacity: 0;
+  animation: fadeInUpArrow 2s ease-in-out infinite;
+}
+
+@keyframes fadeInUpArrow {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+/****************** section1 끝 ******************/
+
+/****************** section2 시작 ******************/
+.slide_section2 ul,
+.slide_section2 p {
+  margin: 0;
+  padding: 0;
+  color: #ddd;
+}
+.slide_section2 p {
+  text-align: center;
+  font-size: 1.5vw;
+}
+.slide_section2 {
+  display: grid;
+  padding: 20px;
+  height: 100%;
+
+  align-content: center;
+}
+
+.slide_section2_contaner {
+  height: 100%;
+  margin-top: auto !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.skills_title {
+  text-align: center;
+  font-size: 2.5vw;
+  color: #ddd;
+
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-top: 0;
+}
+.slide_section2_skill_box {
+  margin: 0 5px 0 5px !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
+  gap: 20px; /* 항목 간격 */
+  padding: 2rem 3rem !important;
+  background-color: #f7f7f7;
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);
+}
+
+/* 기존 스타일 유지 */
+.slide_section2_skill_box li {
+  cursor: pointer;
+  list-style: none;
+  transition: transform 0.3s ease; /* 부드러운 크기 변화 추가 */
+}
+
+/* 마우스를 올렸을 때 크기 확대 */
+.slide_section2_skill_box li:hover {
+  transform: scale(1.2); /* 크기 1.2배로 확대 */
+}
+
+/* 마우스를 올렸을 때 이미지에도 효과 적용 (선택사항) */
+.slide_section2_skill_box li:hover img {
+  transform: scale(1.2); /* 이미지도 함께 확대 */
+}
+
+.slide_section2_skill_box img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/****************** section2 끝 ******************/

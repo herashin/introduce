@@ -8,6 +8,8 @@ import Fullpage, {
 
 import SkillChart from "./SkillChart";
 
+import Slide from "./mainChild/SlideBox";
+
 function AboutMe() {
   // alert("어서오세요.  이곳은 개발자 신준호를 구경하는 공간입니다.");
 
@@ -96,8 +98,8 @@ function AboutMe() {
                 <text
                   x="37"
                   y="66"
-                  font-size="45"
-                  font-family="Arial"
+                  fontSize="45"
+                  fontFamily="Arial"
                   fill="#fff"
                 >
                   ?
@@ -105,7 +107,9 @@ function AboutMe() {
               </svg>
               <p className={styled.AboutMe_q_text}>
                 <span>
-                  * 이 이력서는 프론트(git page), 백엔드 (cafe24)로
+                  * 이 이력서는<br></br> 프론트(git page),<br></br> 백엔드
+                  (cafe24)로
+                  <br></br>
                   호스팅되어있습니다.
                 </span>
                 <br />
@@ -125,34 +129,7 @@ function AboutMe() {
               </p>
             </div>
             <section className={styled.AboutMe_section1}>
-              {/* 배경 이미지 추가 */}
-              <img
-                className={`${styled.AboutMe_section1_back_img} ${
-                  isLoaded ? styled.loaded : ""
-                }`}
-                src={require("../img/section1_back.webp")}
-                alt="Background"
-              />
-              {/* 기존 이미지 */}
-              <img
-                className={styled.AboutMe_section1_img}
-                src={require("../img/section1_front.png")}
-                alt="Welcome"
-              />
-
-              <h2 className={styled.AboutMe_top_title}>
-                {/* {introText} */}
-                <span dangerouslySetInnerHTML={{ __html: formattedText }} />
-              </h2>
-
-              {/* 화살표 이미지 (타이핑 완료 후 표시) */}
-              {arrowOn && (
-                <img
-                  className={styled.arrow}
-                  src={require("../img/arrow.png")} // 화살표 이미지 경로
-                  alt="Scroll Down"
-                />
-              )}
+              <Slide />
             </section>
           </FullpageSection>
 
@@ -206,7 +183,7 @@ function AboutMe() {
             style={{ height: "90vh", backgroundColor: "#333", color: "white" }}
           >
             <section className={styled.AboutMe_section3}>
-              <h3 className={styled.section3_title}>기술 스택</h3>
+              <h3 className={styled.section3_title}>시간별 기술 스택</h3>
               <ul className={styled.image_list}>
                 {chartsVisible && ( // chartsVisible가 true일 때만 그래프 렌더링
                   <>
@@ -245,10 +222,10 @@ function AboutMe() {
                           "Spring",
                           "Oracle",
                           "야근의 익숙함",
-                          "JQuery",
+                          "JavaScript",
                           "CRUD",
                         ]}
-                        dataPoints={[8, 8, 7, 9, 9, 7]}
+                        dataPoints={[8, 8, 7, 9, 7, 7]}
                         title="백엔드 기술"
                       />
                     </li>

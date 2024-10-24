@@ -13,6 +13,9 @@ import BoardSave from "./components/BoardSave";
 import BoardDetail from "./components/BoardDetail";
 import BoardEdit from "./components/BoardEdit";
 
+import "swiper/css";
+import "swiper/css/pagination";
+
 import Footer from "./components/Footer"; // Footer 컴포넌트 추가
 
 function App() {
