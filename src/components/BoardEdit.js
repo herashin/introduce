@@ -98,7 +98,7 @@ function BoardEdit() {
     }
 
     // 게시글의 내용에서 <p> 태그 제거
-    const ptageBlock = text.replace(/<\/?p>/g, "");
+    // const ptageBlock = text.replace(/<\/?p>/g, "");
 
     console.log("Updating data:", {
       title,
