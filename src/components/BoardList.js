@@ -68,7 +68,33 @@ function BoardList() {
       <button onClick={handleWriteClick} className={styled.write_button}>
         글쓰기
       </button>
-
+      {/* 비밀번호 모달 */}
+      {showPasswordModal && (
+        <div className={styled.password_modal}>
+          <div className={styled.password_modal_content}>
+            <h2>비밀번호 확인</h2>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="비밀번호 입력"
+              className={styled.password_input}
+            />
+            <button
+              onClick={handlePasswordSubmit}
+              className={styled.submit_button}
+            >
+              확인
+            </button>
+            <button
+              onClick={() => setShowPasswordModal(false)}
+              className={styled.cancel_button}
+            >
+              취소
+            </button>
+          </div>
+        </div>
+      )}
       <div className={styled.AboutMe_q_mark}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -136,34 +162,6 @@ function BoardList() {
           </li>
         ))}
       </ul>
-
-      {/* 비밀번호 모달 */}
-      {showPasswordModal && (
-        <div className={styled.password_modal}>
-          <div className={styled.password_modal_content}>
-            <h2>비밀번호 확인</h2>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="비밀번호 입력"
-              className={styled.password_input}
-            />
-            <button
-              onClick={handlePasswordSubmit}
-              className={styled.submit_button}
-            >
-              확인
-            </button>
-            <button
-              onClick={() => setShowPasswordModal(false)}
-              className={styled.cancel_button}
-            >
-              취소
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
