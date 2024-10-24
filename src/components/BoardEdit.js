@@ -102,7 +102,7 @@ function BoardEdit() {
 
     console.log("Updating data:", {
       title,
-      content: ptageBlock,
+      content: text,
       images: imageFiles,
       password,
     }); // 서버로 보내기 전에 데이터 출력
@@ -113,7 +113,7 @@ function BoardEdit() {
     // 게시글 데이터를 JSON으로 변환하여 FormData에 추가
     const postData = {
       title: title,
-      content: ptageBlock,
+      content: text,
     };
     formData.append(
       "data",
