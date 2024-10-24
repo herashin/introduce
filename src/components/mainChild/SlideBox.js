@@ -199,13 +199,13 @@ function Slide() {
                 </ul>
               </div>
             )}
-            {arrowOn && (
+            {/* {arrowOn && (
               <img
                 className={styled.arrow}
                 src={"path/to/arrowImg"}
                 alt="Scroll Down"
               />
-            )}
+            )} */}
           </div>
         </section>
       </SwiperSlide>
