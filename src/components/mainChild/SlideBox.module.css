@@ -14,33 +14,34 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* 전체 너비 */
-  object-fit: cover; /* 이미지가 영역에 맞게 채워짐 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: blur(5px); /* 배경 이미지에 블러 효과 적용 */
   z-index: 1;
-  transform: scale(1); /* 초기 이미지 크기 */
+  transform: scale(1);
   transition: transform 7s cubic-bezier(0.645, 0.045, 0.355, 1);
+  background-image: url("../../img/slide1_back.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.AboutMe_section1_box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .AboutMe_section1_back_img.loaded {
   transform: scale(1.05); /* 이미지 확대 */
 }
 
-/* 기존 이미지를 유지 */
-.AboutMe_section1_img {
-  position: absolute;
-  bottom: 5%;
-  left: 3%;
-  z-index: 2;
-  width: calc(30% - 70px);
-  max-width: 200px;
-  margin: 0 auto;
-  display: block;
-}
-
 /* 텍스트 상자 */
 .AboutMe_text_container {
-  position: absolute;
+  /* position: absolute; */
+  height: 100%;
   z-index: 3;
   text-align: left;
   color: #fff;
@@ -52,10 +53,52 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
 }
 
+/* 순차적으로 페이드 인되는 p 태그 */
+.fade_in_p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+/* 각 p 태그에 순차적으로 애니메이션 딜레이를 줌 */
+.fade_in_p:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.fade_in_p:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.fade_in_p:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.fade_in_p:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.fade_in_p:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 두 번째 텍스트 컨테이너 */
 .AboutMe_text_container2 {
-  position: absolute;
+  /* position: absolute; */
+  height: 100%;
   z-index: 3;
   text-align: left;
   color: #fff;
@@ -67,8 +110,22 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeIn2 2s forwards; /* 2초 동안 페이드 인 */
+  animation-delay: 3s; /* 3초 딜레이 */
 }
 
+@keyframes fadeIn2 {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 .AboutMe_text_container2 ul {
   display: flex;
   flex-direction: column;
@@ -83,6 +140,7 @@
 .AboutMe_text_container2_img {
   margin-right: 15px;
 }
+
 .AboutMe_text_container2_img svg {
   width: 25px !important;
   height: 25px !important;
@@ -92,7 +150,7 @@
 .fade_in {
   opacity: 0;
   transform: translateY(20px); /* 아래에서 시작 */
-  animation: fadeInUp 2s forwards; /* 2초에 걸쳐 페이드 인 및 위로 이동 */
+  animation: fadeInUp 2s forwards;
 }
 
 @keyframes fadeInUp {
@@ -131,7 +189,6 @@
     transform: translateX(-50%) translateY(0);
   }
 }
-/****************** section1 끝 ******************/
 
 /****************** section2 시작 ******************/
 .slide_section2 ul,
@@ -140,15 +197,16 @@
   padding: 0;
   color: #ddd;
 }
+
 .slide_section2 p {
   text-align: center;
   font-size: 1.5vw;
 }
+
 .slide_section2 {
   display: grid;
   padding: 20px;
   height: 100%;
-
   align-content: center;
 }
 
@@ -159,41 +217,39 @@
   justify-content: center;
   align-items: center;
 }
+
 .skills_title {
   text-align: center;
   font-size: 2.5vw;
   color: #ddd;
-
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 0;
 }
+
 .slide_section2_skill_box {
   margin: 0 5px 0 5px !important;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3개씩 배치 */
-  gap: 20px; /* 항목 간격 */
+  gap: 20px;
   padding: 2rem 3rem !important;
   background-color: #f7f7f7;
   border-radius: 1rem;
   box-shadow: 1rem 1rem 1rem 0 rgb(68 68 68 / 20%);
 }
 
-/* 기존 스타일 유지 */
 .slide_section2_skill_box li {
   cursor: pointer;
   list-style: none;
-  transition: transform 0.3s ease; /* 부드러운 크기 변화 추가 */
+  transition: transform 0.3s ease;
 }
 
-/* 마우스를 올렸을 때 크기 확대 */
 .slide_section2_skill_box li:hover {
-  transform: scale(1.2); /* 크기 1.2배로 확대 */
+  transform: scale(1.2);
 }
 
-/* 마우스를 올렸을 때 이미지에도 효과 적용 (선택사항) */
 .slide_section2_skill_box li:hover img {
-  transform: scale(1.2); /* 이미지도 함께 확대 */
+  transform: scale(1.2);
 }
 
 .slide_section2_skill_box img {
@@ -201,5 +257,4 @@
   height: 80px;
   object-fit: contain;
 }
-
 /****************** section2 끝 ******************/
