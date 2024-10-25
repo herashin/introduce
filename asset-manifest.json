@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/introduce/static/css/main.17f7d890.css",
-    "main.js": "/introduce/static/js/main.81751f01.js",
+    "main.css": "/introduce/static/css/main.76ce42b0.css",
+    "main.js": "/introduce/static/js/main.f7520de6.js",
     "static/js/453.a7c208d5.chunk.js": "/introduce/static/js/453.a7c208d5.chunk.js",
     "static/media/slide1_back.png": "/introduce/static/media/slide1_back.1eaf00cbb752e3a54d0d.png",
     "static/media/job4_1.jpg": "/introduce/static/media/job4_1.6f9e80ddf5485aa3c7b4.jpg",
     "static/media/job2_1.jpg": "/introduce/static/media/job2_1.201e81675adde1f88852.jpg",
     "static/media/job3_1.jpg": "/introduce/static/media/job3_1.0ee50614ad40b385182d.jpg",
-    "static/media/wellcome2.webp": "/introduce/static/media/wellcome2.7c52129220ea1fcb3480.webp",
     "static/media/oracle.png": "/introduce/static/media/oracle.39a97a23ea50fd5ebb20.png",
     "static/media/job1_1.jpg": "/introduce/static/media/job1_1.a8c9af03090d19d10cfe.jpg",
     "static/media/java.png": "/introduce/static/media/java.6b69aa9efb979367dd5c.png",
@@ -23,12 +22,12 @@
     "static/media/springboot.png": "/introduce/static/media/springboot.7f34ee5e9541865ced65.png",
     "static/media/cafe24.webp": "/introduce/static/media/cafe24.7553976c4af26b8e2312.webp",
     "index.html": "/introduce/index.html",
-    "main.17f7d890.css.map": "/introduce/static/css/main.17f7d890.css.map",
-    "main.81751f01.js.map": "/introduce/static/js/main.81751f01.js.map",
+    "main.76ce42b0.css.map": "/introduce/static/css/main.76ce42b0.css.map",
+    "main.f7520de6.js.map": "/introduce/static/js/main.f7520de6.js.map",
     "453.a7c208d5.chunk.js.map": "/introduce/static/js/453.a7c208d5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17f7d890.css",
-    "static/js/main.81751f01.js"
+    "static/css/main.76ce42b0.css",
+    "static/js/main.f7520de6.js"
   ]
 }
