@@ -210,7 +210,7 @@
 
 .slide_section2 p {
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 1.5rem;
 }
 
 .slide_section2 {
@@ -273,3 +273,56 @@
   object-fit: contain;
 }
 /****************** section2 끝 ******************/
+
+@media screen and (max-width: 767px) {
+  /* section1 */
+
+  .AboutMe_section1 {
+    height: 100% !important;
+    padding-bottom: 10vw;
+  }
+  .AboutMe_text_container {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .AboutMe_section1_box {
+    align-items: unset;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+
+  .AboutMe_text_container2 {
+    /* position: absolute; */
+    height: 100%;
+    z-index: 3;
+
+    right: unset !important;
+    left: 0;
+    top: 15%;
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    opacity: 0;
+    animation: fadeIn2 2s forwards; /* 2초 동안 페이드 인 */
+    animation-delay: 3s; /* 3초 딜레이 */
+  }
+
+  /* section1  끝*/
+
+  /* section2 */
+  .slide_section2 {
+    height: 100% !important;
+  }
+  .slide_section2_contaner {
+    height: 100%;
+
+    align-items: center;
+    flex-direction: column;
+  }
+  /* section2 끝 */
+}

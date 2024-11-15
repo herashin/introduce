@@ -43,3 +43,29 @@
   cursor: pointer;
   margin-right: 5px;
 }
+
+@media screen and (max-width: 767px) {
+  .Project_content_wrapper {
+    flex-direction: column;
+  }
+
+  .Project_days {
+    font-size: 1.4rem;
+  }
+
+  .Project_introduce_box_slide {
+    width: 100%;
+    max-width: 100%;
+  }
+  .Project_introduce_box_text {
+    font-size: 1.2rem;
+  }
+
+  .Project_introduce_box_skill_box {
+    flex-wrap: wrap;
+  }
+
+  .Project_introduce_box_skills {
+    margin-bottom: 2vw;
+  }
+}

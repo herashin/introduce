@@ -58,3 +58,9 @@ body {
 .rotate {
   transform: rotate(180deg); /* 180도 회전 */
 }
+
+@media screen and (max-width: 767px) {
+  .Experience_wrap {
+    font-size: 1.5rem;
+  }
+}
