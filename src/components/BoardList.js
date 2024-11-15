@@ -95,7 +95,7 @@ function BoardList() {
           </div>
         </div>
       )}
-      <div className={styled.AboutMe_q_mark}>
+      {/* <div className={styled.AboutMe_q_mark}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 100 100"
@@ -130,7 +130,7 @@ function BoardList() {
           <br />
           <br />
         </p>
-      </div>
+      </div> */}
       <ul className={styled.post_list}>
         {posts.map((post) => (
           <li key={post.sequenceNumber} className={styled.post_item}>

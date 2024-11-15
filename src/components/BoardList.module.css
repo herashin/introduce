@@ -1,7 +1,9 @@
 .board_list_wrap {
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   color: #ddd;
   padding: 20px 20px 50px 20px;
+  width: 80%;
+  margin: 0 auto;
 }
 .board_list_wrap a {
   color: #ddd;
