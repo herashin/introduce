@@ -76,7 +76,7 @@ function AboutMe() {
   return (
     <div className={styled.AboutMe_wrap}>
       <div style={{ backgroundColor: "#000" }}>
-        <div className={styled.AboutMe_q_mark}>
+        {/* <div className={styled.AboutMe_q_mark}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
@@ -111,7 +111,7 @@ function AboutMe() {
             <br />
             <br />
           </p>
-        </div>
+        </div> */}
         <section className={styled.AboutMe_section1}>
           <SkillsArea />
         </section>
