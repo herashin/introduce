@@ -24,6 +24,7 @@
   background-image: url("../../img/slide1_back.png");
   background-size: cover;
   background-position: center;
+  animation: zoomIn 6s ease-in-out forwards; /* 10초 동안 확대 */
 }
 
 .AboutMe_section1_box {
@@ -36,6 +37,15 @@
 
 .AboutMe_section1_back_img.loaded {
   transform: scale(1.05); /* 이미지 확대 */
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05); /* 원하는 확대 정도로 설정 */
+  }
 }
 
 /* 텍스트 상자 */
@@ -220,11 +230,16 @@
 
 .skills_title {
   text-align: center;
-  font-size: 2.5vw;
+
   color: #ddd;
   text-transform: uppercase;
   font-weight: bold;
   margin-top: 0;
+}
+
+.skills_title span {
+  font-size: 4rem;
+  border-bottom: 2px solid #ddd;
 }
 
 .slide_section2_skill_box {

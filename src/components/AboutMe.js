@@ -10,6 +10,10 @@ import SkillChart from "./SkillChart";
 
 import Slide from "./mainChild/SlideBox";
 
+import Project from "./mainChild/Project";
+
+import ScrollEvent from "./mainChild/ScrollEvent";
+
 function AboutMe() {
   // alert("어서오세요.  이곳은 개발자 신준호를 구경하는 공간입니다.");
 
@@ -130,6 +134,13 @@ function AboutMe() {
             </div>
             <section className={styled.AboutMe_section1}>
               <Slide />
+            </section>
+          </FullpageSection>
+
+          <FullpageSection>
+            <section className={styled.AboutMe_section1_2}>
+              {/* <ScrollEvent /> */}
+              <Project />
             </section>
           </FullpageSection>
 

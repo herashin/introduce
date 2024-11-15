@@ -2,6 +2,7 @@ import "./App.css";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./header/header";
 import AboutMe from "./components/AboutMe";
+import AboutMe2 from "./components/AboutMe2";
 import JobDetail1 from "./components/JobDetail1";
 import JobDetail2 from "./components/JobDetail2";
 import JobDetail3 from "./components/JobDetail3";
@@ -25,7 +26,7 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route path="/" element={<AboutMe />} />
+            <Route path="/" element={<AboutMe2 />} />
             {/* 메인 홈은 AboutMe 컴포넌트로 지정  */}
             <Route path="/job1" element={<JobDetail1 />} />
             {/* 첫 번째 직업 페이지 */}

@@ -1,0 +1,395 @@
+.AboutMe_q_mark {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 10;
+  width: 220px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.AboutMe_q_text {
+  background-color: #ddd;
+  position: relative;
+  left: -400px;
+  transition: 1s;
+}
+
+.AboutMe_q_mark:hover .AboutMe_q_text {
+  left: 0;
+}
+
+.AboutMe_wrap {
+  /* padding: 20px; */
+}
+
+div[name="Inner"] {
+  left: 70px !important;
+  right: auto !important;
+  width: calc(100% - 70px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+}
+
+/* section {
+    left: 200px !important;
+  } */
+
+.AboutMe_top_title span {
+  color: #fff;
+}
+/****************** section1 시작 ******************/
+.AboutMe_section1 {
+  /* height: 100vh;  */
+  /* 섹션의 높이를 화면 전체로 설정 */
+  height: 100%;
+  position: relative;
+}
+
+/* section1 백그라운드 이미지 */
+.AboutMe_section1_back_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(48% - 70px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+  object-fit: cover; /* 이미지가 영역에 맞게 채워짐 */
+  z-index: 1; /* 배경 이미지가 맨 뒤로 가도록 설정 */
+  transform: scale(1); /* 초기 크기 */
+  transition: transform 7s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/* 페이지 로드 후 상태 */
+.AboutMe_section1_back_img.loaded {
+  transform: scale(1.05); /* 확대된 크기 */
+}
+
+/* 그림 그리는 사람 */
+.AboutMe_section1_img {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  z-index: 2; /* 앞에 있는 이미지 */
+  width: calc(30% - 70px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+  max-width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 텍스트 스타일 - 백그라운드 이미지 위로 배치 */
+.AboutMe_top_title {
+  position: absolute;
+  z-index: 3; /* 텍스트가 이미지 위로 오도록 설정 */
+  text-align: left;
+  padding-top: 20px;
+  font-size: 2vw; /* 기본적으로 뷰포트 너비에 따라 폰트 크기 설정 */
+  color: #fff;
+  left: 45%;
+}
+
+/* section1 하단 중앙에 화살표 이미지 배치 */
+.arrow {
+  position: absolute;
+  bottom: 15%;
+  left: 65%;
+  transform: translateX(-50%); /* 가로축 중앙 정렬 */
+  width: 200px; /* 화살표 이미지 크기 */
+  opacity: 0; /* 처음에는 보이지 않음 */
+  animation: fadeInUp 2s ease-in-out infinite; /* 타이핑 종료 후 애니메이션 */
+}
+
+/* 화살표가 위로 올라오는 애니메이션 */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0); /* 처음 위치 */
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-10px); /* 위로 살짝 이동 */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0); /* 다시 처음 위치 */
+  }
+}
+/****************** section1 끝 ******************/
+
+/****************** section2 시작 ******************/
+
+/* Section 2 스타일 - 백그라운드 이미지 추가 */
+.AboutMe_section2 {
+  background-image: url("../img/section2_back.png"); /* 백그라운드 이미지 경로 */
+  background-size: cover; /* 이미지가 전체 영역을 덮도록 설정 */
+  background-position: center; /* 이미지가 중앙에 위치하도록 설정 */
+  background-repeat: no-repeat; /* 이미지가 반복되지 않도록 설정 */
+  height: 100vh; /* 전체 화면 높이를 차지하도록 설정 */
+  padding: 20px;
+  color: white; /* 텍스트 색상 */
+}
+
+/* Section 2 타이틀 스타일 */
+.section2_title {
+  font-size: 3vw; /* 화면 크기에 따라 타이틀 크기 조절 */
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; /* 타이틀 색상 */
+}
+
+/* 이미지 리스트 스타일 */
+.image_list {
+  list-style-type: none;
+  display: flex; /* 가로로 박스를 나열 */
+  justify-content: space-around; /* 박스들 사이에 공간을 균등하게 배치 */
+  padding: 0;
+  margin: 0;
+}
+
+.image_list li {
+  width: 30%; /* 각 박스의 너비를 설정 */
+  background-color: rgba(255, 255, 255, 0.1); /* 박스 배경 */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+}
+
+.image_list li img {
+  width: 100%; /* 이미지가 박스 크기에 맞게 조절되도록 */
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px; /* 이미지 모서리를 둥글게 */
+}
+.image_list li a {
+  color: #ffffff;
+  font-size: 1.2vw;
+}
+
+/****************** section2  끝  ******************/
+
+/****************** section3 시작  ******************/
+
+.AboutMe_section3 {
+  /* background-image: url("../img/section2_back.png"); */
+
+  height: 100vh; /* 전체 화면 높이를 차지하도록 설정 */
+  padding: 20px;
+  color: white; /* 텍스트 색상 */
+}
+
+/* Section 2 타이틀 스타일 */
+.section2_title {
+  font-size: 3vw; /* 화면 크기에 따라 타이틀 크기 조절 */
+  text-align: center;
+  margin-bottom: 20px;
+  color: white; /* 타이틀 색상 */
+}
+
+/* 이미지 리스트 스타일 */
+.image_list {
+  list-style-type: none;
+  display: flex; /* 가로로 박스를 나열 */
+  justify-content: space-around; /* 박스들 사이에 공간을 균등하게 배치 */
+  padding: 0;
+  margin: 0;
+}
+
+.image_list li {
+  width: 30%; /* 각 박스의 너비를 설정 */
+  background-color: rgba(255, 255, 255, 0.1); /* 박스 배경 */
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 박스 그림자 */
+}
+
+.image_list li img {
+  width: 100%; /* 이미지가 박스 크기에 맞게 조절되도록 */
+  height: 400px;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px; /* 이미지 모서리를 둥글게 */
+}
+.image_list li a {
+  color: #ffffff;
+  font-size: 1.2vw;
+}
+
+/****************** section3  끝  ******************/
+
+/* 반응형 스타일 */
+
+/* 화면이 1200px 이상일 때 (데스크탑 환경) */
+@media screen and (min-width: 1200px) {
+  .AboutMe_section1_img {
+    width: calc(30% - 70px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+    bottom: 5%;
+  }
+
+  .AboutMe_top_title {
+    left: 45%; /* 타이틀 위치 */
+    font-size: 2vw;
+  }
+}
+
+/* 화면이 768px ~ 1199px일 때 (태블릿 환경) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+  .AboutMe_section1_img {
+    width: calc(40% - 70px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+    bottom: 5%;
+  }
+
+  .AboutMe_top_title {
+    left: 40%; /* 타이틀 위치 */
+    font-size: 3vw; /* 폰트 크기를 조금 더 키움 */
+  }
+
+  .AboutMe_section1_back_img {
+    width: calc(50% - 70px); /* 배경 이미지 크기 조정 */
+  }
+}
+
+/* 화면이 480px ~ 767px일 때 (모바일 환경) */
+@media screen and (max-width: 767px) {
+  .AboutMe_q_mark {
+    top: 2.5%;
+  }
+  .AboutMe_q_mark svg {
+    position: relative;
+    right: -140px;
+  }
+  .AboutMe_wrap {
+    padding: 10px; /* 패딩을 줄여 화면에 맞춤 */
+  }
+
+  div[name="Inner"] {
+    left: 0px !important;
+    right: auto !important;
+    width: calc(100% - 0px); /* 헤더 너비를 제외한 나머지 화면 너비 */
+  }
+
+  .AboutMe_section1 {
+    position: relative;
+    z-index: 1; /* 자식 요소들이 배경보다 앞에 오도록 설정 */
+  }
+
+  .AboutMe_section1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("../img/wellcome2.webp");
+      background-size: cover;
+      background-position: center; */
+    filter: blur(5px); /* 배경 이미지에만 블러 효과 적용 */
+    z-index: -1; /* 배경 이미지가 자식 요소 뒤에 배치되도록 설정 */
+  }
+
+  .AboutMe_section1_back_img,
+  .AboutMe_section1_img {
+    display: none; /* 모바일 환경에서 이미지 숨김 */
+  }
+
+  .AboutMe_top_title {
+    left: 14%; /* 타이틀 위치 */
+    font-size: 4vw; /* 작은 화면에서 폰트 크기 확대 */
+    padding-top: 10px;
+    top: 10%;
+  }
+
+  .AboutMe_section1_back_img {
+    width: calc(100% - 0px); /* 배경 이미지 크기 확대 */
+    transform: scale(1); /* 스케일 조정 */
+  }
+
+  .arrow {
+    left: 50%; /* 부모 요소의 정 가운데 위치 */
+    transform: translateX(-50%); /* 자신의 너비만큼 다시 중앙으로 이동 */
+    width: 100px;
+  }
+  /* section1 끝 */
+
+  /*  section2   */
+
+  .image_list {
+    flex-wrap: wrap;
+  }
+  .image_list li {
+    width: 45%;
+  }
+  .image_list li img {
+    height: 200px;
+  }
+
+  .image_list li a {
+    font-size: 2.5vw;
+  }
+
+  .AboutMe_section3 {
+    padding-top: 1vw;
+  }
+  .AboutMe_section3 h3 {
+    margin: 0;
+    margin-bottom: 1vw;
+  }
+}
+
+/* 화면이 479px 이하일 때 (소형 모바일 환경) */
+@media screen and (max-width: 479px) {
+  .AboutMe_wrap {
+    padding: 5px; /* 작은 패딩 */
+  }
+
+  .AboutMe_section1_img {
+    display: none; /* 모바일 환경에서 이미지 숨김 */
+  }
+
+  .AboutMe_top_title {
+    left: 6%; /* 타이틀 위치 */
+    font-size: 5vw; /* 폰트 크기 더 크게 조정 */
+    padding-top: 5px;
+  }
+
+  .AboutMe_section1_back_img {
+    width: 100%; /* 배경 이미지 전체 화면 크기 */
+    transform: scale(1); /* 스케일 조정 */
+  }
+
+  /*  section2   */
+
+  .image_list {
+    flex-wrap: wrap;
+  }
+  .image_list li {
+    width: 40%;
+    margin-bottom: 2vw;
+  }
+  .image_list li img {
+    height: 200px;
+  }
+
+  .image_list li a {
+    font-size: 3.5vw;
+  }
+
+  .AboutMe_section3 {
+    padding-top: 1vw;
+  }
+  .AboutMe_section3 h3 {
+    margin: 0;
+    margin-bottom: 1vw;
+  }
+
+  .AboutMe_section3 .image_list {
+    flex-wrap: unset;
+    overflow: auto;
+  }
+  .AboutMe_section3 .image_list li {
+    width: 80%;
+  }
+}
+
+/* 
+  밝은 회색 (#F0F0F0 또는 #EAEAEA)
+  파스텔톤 민트 (#A8E6CF)
+  크림색 (#FFFDD0)
+  파스텔 블루 (#A7C7E7)
+  베이지 (#F5F5DC)
+  아이보리 (#FFFFF0)
+  */

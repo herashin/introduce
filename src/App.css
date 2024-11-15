@@ -1,6 +1,11 @@
 .content {
-  margin-left: 200px; /* 사이드바 넓이만큼 여백을 둠 */
-  padding: 20px;
+  /* 사이드바 넓이만큼 여백을 둠 */
+  /* margin-left: 200px;
+  padding: 20px; */
+  /* aboutme2 사용으로 주석함   */
+
+  margin-left: 70px;
+  overflow: hidden;
 }
 
 /* .App {
@@ -31,6 +36,9 @@ img {
 a {
   color: #000;
   text-decoration: none;
+}
+ul {
+  padding: 0;
 }
 
 li {
