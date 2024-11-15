@@ -5,6 +5,7 @@ body {
 .Experience_wrap {
   color: #ddd;
   margin-top: 10%;
+  padding: 0 10vw;
 }
 
 .Experience_wrap li {
