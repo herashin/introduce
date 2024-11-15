@@ -46,7 +46,17 @@ function Project() {
       projectsimple:
         "메인페이지 날씨 API,지역별 게시판. \n함께 운동 후 후기를 남길 수 있는 운동 후기 게시판, 자유게시판 구현",
       url: "https://github.com/duck-ach/FINAL_PROJECT",
-      skills: ["JavaScript", "React", "Node.js", "CSS"],
+      skills: [
+        "JavaScript",
+        "jQuery",
+        "CSS3",
+        "HTML5",
+        "JSP",
+        "JAVA",
+        "Spring",
+        "Mybatis",
+        "Oracle",
+      ],
       serviceNow: "cafe24 기간만료",
     },
 
