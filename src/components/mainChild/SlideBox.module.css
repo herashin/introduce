@@ -272,6 +272,7 @@
   height: 80px;
   object-fit: contain;
 }
+
 /****************** section2 끝 ******************/
 
 @media screen and (max-width: 767px) {
@@ -325,4 +326,18 @@
     flex-direction: column;
   }
   /* section2 끝 */
+
+  .slide_section2_skill_box li {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05); /* 살짝 확대 */
+    }
+  }
 }
