@@ -65,7 +65,8 @@ function BoardEdit() {
         reader.onload = () => {
           const editor = quillRef.current.getEditor();
           const range = editor.getSelection();
-          editor.insertEmbed(range.index, "image", reader.result); // 이미지를 에디터에 미리보기
+          const imageHTML = `<p><img src="${reader.result}" /></p>`;
+          editor.insertEmbed(range.index, "image", imageHTML); // 이미지를 에디터에 미리보기
         };
         reader.readAsDataURL(file);
       } else {
