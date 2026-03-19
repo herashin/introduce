@@ -97,7 +97,7 @@ function BoardSave() {
         // 'data' 파트에 JSON 데이터 추가
         const postData = {
           title: title,
-          content: ptageBlock,
+          content: text,
         };
         formData.append(
           "data",
