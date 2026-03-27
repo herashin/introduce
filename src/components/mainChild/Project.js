@@ -11,6 +11,11 @@ import lafuma1 from "../../img/lafuma1.gif";
 import lafuma2 from "../../img/lafuma2.gif";
 import lafuma3 from "../../img/lafuma3.gif";
 
+
+import jeil01 from "../../img/jeil01.png";
+import jeil02 from "../../img/jeil02.gif";
+import jeil03 from "../../img/jeil02.gif";
+
 function Project() {
   const projectData = [
     {
@@ -35,6 +40,27 @@ function Project() {
       ],
 
       serviceNow: "GitHub Pages 서비스중, cafe24서비스중",
+    },
+    {
+      name: "제일정육",
+      days: "2024.12.15 ~ 2025.01.03",
+      teamSize: 5,
+      images: [jeil01, jeil02, jeil03],
+      projctIntroduceText:
+        "제일정육은 식품 사업자를 타겟으로 기획한 첫 번째 프로젝트로, 실제 거주지였던 독산동 우시장의 생동감에서 영감을 얻었습니다. 원육의 신선한 질감을 시각적으로 전달하기 위해 강렬한 레드 컬러를 시그니처 색상으로 채택하여 브랜드의 정체성을 강조했습니다.",
+      projectsimple:
+        "제일정육은 식품 사업자를 타겟으로 기획한 개인 프로젝트로, \n그누보드(PHP/MySQL) 기반의 CMS를 활용하여 사이트를 구축하였습니다.\n기업의 정체성을 전달하는 Info 및 History 페이지를 구현하였으며,\n다양한 스크립트 기능을 활용하여 사용자 인터랙션의 몰입감을 높였습니다.\n또한, 축산물 유통 구조에 맞춘 제품 카테고리 분류 시스템을 개발하여\n사용자가 품목별로 상품을 직관적으로 탐색하고 정렬할 수 있도록 설계하였습니다.",
+      url: "https://www.mmcmso.com/template/jeilmeat/",
+      skills: [
+        "그누보드",
+        "JavaScript",
+        "jQuery",
+        "CSS3",
+        "HTML5",
+        "PHP",
+        "mySql",
+      ],
+      serviceNow: "cafe24 운영중",
     },
     {
       name: "Sporters",
