@@ -33,10 +33,10 @@ const ProjectSection = ({
             spaceBetween={50}
             slidesPerView={1}
             loop={true}
-            autoplay={{
+            /*autoplay={{
               delay: 5000,
               disableOnInteraction: false,
-            }}
+            }}*/
             pagination={{
               clickable: true,
             }}

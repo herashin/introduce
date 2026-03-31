@@ -19,6 +19,10 @@ import jeil03 from "../../img/jeil02.gif";
 import flara01 from "../../img/flara01.gif";
 import flara02 from "../../img/flara02.gif";
 
+
+import brown01 from "../../img/brown01.gif";
+import brown02 from "../../img/brown02.gif";
+
 function Project() {
   const projectData = [
     {
@@ -62,12 +66,13 @@ function Project() {
         "HTML5",
         "PHP",
         "mySql",
+        "GSAP",
       ],
       serviceNow: "cafe24 운영중",
     },
     {
       name: "Flara",
-      days: "2025.01.13 ~ 2025.01.31",
+      days: "2025.01.13 ~ 2025.02.07",
       teamSize: 1,
       images: [flara01, flara02],
       projctIntroduceText:
@@ -84,6 +89,28 @@ function Project() {
         "HTML5",
         "PHP",
         "mySql",
+      ],
+      serviceNow: "cafe24 운영중",
+    },
+    {
+      name: "Brown Brother",
+      days: "2025.03.04 ~ 2025.03.14",
+      teamSize: 1,
+      images: [brown01, brown02],
+      projctIntroduceText:
+        "브라운 브라더는 평소 관심이 있던 가죽공방에서 영감을 받아 제작하였습니다.\n 기획, 기획, 이미지수집, 기능 개발",
+      projectsimple:
+        "이 프로젝트는 소상공인 및 자영업자를 타겟으로 기획한 \n원페이지(One-page) 형식의 포트폴리오로\n단일 페이지 내에서 모든 정보가 완결되는 구조를 통해\n서비스의 핵심 내용을 직관적으로 전달합니다.\n스크롤의 흐름에 따라 사용자 집중도가 흐트러지지 않도록 \n시각적 전달력을 최우선으로 작업하였으며,\n페이지 곳곳에 다양한 인터랙션 액션을 배치하여 \n단조로움을 피하고 사용자 참여를 유도하도록 설계하였습니다.",
+      url: "https://www.mmcmso.com/template/brownbrother/",
+      skills: [
+        "그누보드",
+        "JavaScript",
+        "jQuery",
+        "CSS3",
+        "HTML5",
+        "PHP",
+        "mySql",
+        "GSAP",
       ],
       serviceNow: "cafe24 운영중",
     },

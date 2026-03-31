@@ -69,3 +69,35 @@
     margin-bottom: 2vw;
   }
 }
+
+
+/****** 스와이퍼 커스텀 *****/
+/* Swiper 화살표 커스텀 */
+.Project_introduce_box_slide :global(.swiper-button-next),
+.Project_introduce_box_slide :global(.swiper-button-prev) {
+  color: #333; /* 화살표 색상 */
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8); /* 배경색 */
+  border-radius: 50%; /* 동그랗게 */
+  transition: all 0.3s;
+}
+
+/* 화살표 내부 아이콘 크기 조절 */
+.Project_introduce_box_slide :global(.swiper-button-next::after),
+.Project_introduce_box_slide :global(.swiper-button-prev::after) {
+  font-size: 18px !important; /* 화살표 크기 */
+  font-weight: bold;
+}
+
+/* 호버 효과 */
+.Project_introduce_box_slide :global(.swiper-button-next:hover),
+.Project_introduce_box_slide :global(.swiper-button-prev:hover) {
+  background: #000;
+  color: #fff;
+}
+
+/* 페이지네이션(점) 색상도 바꾸고 싶다면 */
+.Project_introduce_box_slide :global(.swiper-pagination-bullet-active) {
+  background-color: #333 !important;
+}
