@@ -47,7 +47,7 @@ function Project() {
     {
       name: "제일정육",
       days: "2024.12.15 ~ 2025.01.03",
-      teamSize: 5,
+      teamSize: 1,
       images: [jeil01, jeil02, jeil03],
       projctIntroduceText:
         "제일정육은 식품 사업자를 타겟으로 기획한 첫 번째 프로젝트로, \n실제 거주지였던 독산동 우시장의 생동감에서 영감을 얻었습니다. \n원육의 신선한 질감을 시각적으로 전달하기 위해 \n강렬한 레드 컬러를 시그니처 색상으로 채택하여 브랜드의 정체성을 강조했습니다.",
@@ -68,7 +68,7 @@ function Project() {
     {
       name: "Flara",
       days: "2025.01.13 ~ 2025.01.31",
-      teamSize: 5,
+      teamSize: 1,
       images: [flara01, flara02],
       projctIntroduceText:
         "Flara는 기존에 시도하지 않았던 새로운 업종에 대한 도전으로 기획한 \n화장품 브랜드 쇼핑몰 프로젝트입니다.",
