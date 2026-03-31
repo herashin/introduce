@@ -16,6 +16,9 @@ import jeil01 from "../../img/jeil01.png";
 import jeil02 from "../../img/jeil02.gif";
 import jeil03 from "../../img/jeil02.gif";
 
+import flara01 from "../../img/flara01.gif";
+import flara02 from "../../img/flara02.gif";
+
 function Project() {
   const projectData = [
     {
@@ -47,12 +50,34 @@ function Project() {
       teamSize: 5,
       images: [jeil01, jeil02, jeil03],
       projctIntroduceText:
-        "제일정육은 식품 사업자를 타겟으로 기획한 첫 번째 프로젝트로, 실제 거주지였던 독산동 우시장의 생동감에서 영감을 얻었습니다. 원육의 신선한 질감을 시각적으로 전달하기 위해 강렬한 레드 컬러를 시그니처 색상으로 채택하여 브랜드의 정체성을 강조했습니다.",
+        "제일정육은 식품 사업자를 타겟으로 기획한 첫 번째 프로젝트로, \n실제 거주지였던 독산동 우시장의 생동감에서 영감을 얻었습니다. \n원육의 신선한 질감을 시각적으로 전달하기 위해 \n강렬한 레드 컬러를 시그니처 색상으로 채택하여 브랜드의 정체성을 강조했습니다.",
       projectsimple:
         "제일정육은 식품 사업자를 타겟으로 기획한 개인 프로젝트로, \n그누보드(PHP/MySQL) 기반의 CMS를 활용하여 사이트를 구축하였습니다.\n기업의 정체성을 전달하는 Info 및 History 페이지를 구현하였으며,\n다양한 스크립트 기능을 활용하여 사용자 인터랙션의 몰입감을 높였습니다.\n또한, 축산물 유통 구조에 맞춘 제품 카테고리 분류 시스템을 개발하여\n사용자가 품목별로 상품을 직관적으로 탐색하고 정렬할 수 있도록 설계하였습니다.",
       url: "https://www.mmcmso.com/template/jeilmeat/",
       skills: [
         "그누보드",
+        "JavaScript",
+        "jQuery",
+        "CSS3",
+        "HTML5",
+        "PHP",
+        "mySql",
+      ],
+      serviceNow: "cafe24 운영중",
+    },
+    {
+      name: "flara",
+      days: "2025.01.13 ~ 2025.01.31",
+      teamSize: 5,
+      images: [flara01, flara02],
+      projctIntroduceText:
+        "flara는 기존에 시도하지 않았던 새로운 업종에 대한 도전으로 기획한 \n화장품 브랜드 쇼핑몰 프로젝트입니다.",
+      projectsimple:
+        "그누보드 및 영카트(PHP/MySQL) 기반의 솔루션을 활용하여 이커머스 환경을 구축하였습니다.\n브랜드 고유의 감성을 전달하기 위해 고해상도의 비주얼 배너를 전략적으로 배치하였으며,\n제품의 색상과 질감이 돋보일 수 있도록 레이아웃 전체를 화이트톤으로 설계하여 시각적 몰입감을 극대화하였습니다.",
+      url: "http://www.miracleconsulting.co.kr/",
+      skills: [
+        "그누보드",
+        "영카트",
         "JavaScript",
         "jQuery",
         "CSS3",

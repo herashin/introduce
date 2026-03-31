@@ -26,7 +26,8 @@ body {
 
 body,
 html {
-  font-family: "Do Hyeon", sans-serif;
+ /* font-family: "Do Hyeon", sans-serif;*/
+ font-family: 'Pretendard', 'Malgun Gothic', dotum, sans-serif;
 }
 img {
   max-width: 100%;
