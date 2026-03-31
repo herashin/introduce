@@ -23,7 +23,7 @@ function Project() {
   const projectData = [
     {
       name: "포트폴리오 사이트",
-      days: "2024.09.23 ~ 2024.10.21",
+      days: "2024.09.23 ~",
       teamSize: 1,
       images: [introduce1, introduce2],
       projctIntroduceText:
