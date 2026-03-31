@@ -66,12 +66,12 @@ function Project() {
       serviceNow: "cafe24 운영중",
     },
     {
-      name: "flara",
+      name: "Flara",
       days: "2025.01.13 ~ 2025.01.31",
       teamSize: 5,
       images: [flara01, flara02],
       projctIntroduceText:
-        "flara는 기존에 시도하지 않았던 새로운 업종에 대한 도전으로 기획한 \n화장품 브랜드 쇼핑몰 프로젝트입니다.",
+        "Flara는 기존에 시도하지 않았던 새로운 업종에 대한 도전으로 기획한 \n화장품 브랜드 쇼핑몰 프로젝트입니다.",
       projectsimple:
         "그누보드 및 영카트(PHP/MySQL) 기반의 솔루션을 활용하여 이커머스 환경을 구축하였습니다.\n브랜드 고유의 감성을 전달하기 위해 고해상도의 비주얼 배너를 전략적으로 배치하였으며,\n제품의 색상과 질감이 돋보일 수 있도록 레이아웃 전체를 화이트톤으로 설계하여 시각적 몰입감을 극대화하였습니다.",
       url: "http://www.miracleconsulting.co.kr/",
