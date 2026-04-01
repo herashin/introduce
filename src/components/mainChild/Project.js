@@ -23,6 +23,10 @@ import flara02 from "../../img/flara02.gif";
 import brown01 from "../../img/brown01.gif";
 import brown02 from "../../img/brown02.gif";
 
+
+import coar01 from "../../img/coar01.gif";
+import coar02 from "../../img/coar02.gif";
+
 function Project() {
   const projectData = [
     {
@@ -78,7 +82,7 @@ function Project() {
       projctIntroduceText:
         "Flara는 기존에 시도하지 않았던 새로운 업종에 대한 도전으로 기획한 \n화장품 브랜드 쇼핑몰 프로젝트입니다. \n 기획, 이미지수집, 기능 개발",
       projectsimple:
-        "그누보드 및 영카트(PHP/MySQL) 기반의 솔루션을 활용하여 이커머스 환경을 구축하였습니다.\n브랜드 고유의 감성을 전달하기 위해 고해상도의 비주얼 배너를 전략적으로 배치하였으며,\n제품의 색상과 질감이 돋보일 수 있도록 레이아웃 전체를 화이트톤으로 설계하여 시각적 몰입감을 극대화하였습니다.",
+        "그누보드 및 영카트(PHP/MySQL) 기반의 솔루션을 \n활용하여 이커머스 환경을 구축하였습니다.\n브랜드 고유의 감성을 전달하기 위해 \n고해상도의 비주얼 배너를 전략적으로 배치하였으며,\n제품의 색상과 질감이 돋보일 수 있도록 레이아웃 전체를 \n화이트톤으로 설계하여 시각적 몰입감을 극대화하였습니다.",
       url: "http://www.miracleconsulting.co.kr/",
       skills: [
         "그누보드",
@@ -102,6 +106,28 @@ function Project() {
       projectsimple:
         "이 프로젝트는 소상공인 및 자영업자를 타겟으로 기획한 \n원페이지(One-page) 형식의 포트폴리오로\n단일 페이지 내에서 모든 정보가 완결되는 구조를 통해\n서비스의 핵심 내용을 직관적으로 전달합니다.\n스크롤의 흐름에 따라 사용자 집중도가 흐트러지지 않도록 \n시각적 전달력을 최우선으로 작업하였으며,\n페이지 곳곳에 다양한 인터랙션 액션을 배치하여 \n단조로움을 피하고 사용자 참여를 유도하도록 설계하였습니다.",
       url: "https://www.mmcmso.com/template/brownbrother/",
+      skills: [
+        "그누보드",
+        "JavaScript",
+        "jQuery",
+        "CSS3",
+        "HTML5",
+        "PHP",
+        "mySql",
+        "GSAP",
+      ],
+      serviceNow: "cafe24 운영중",
+    },
+     {
+      name: "Pilates COAR",
+      days: "2025.03.17 ~ 2025.03.28",
+      teamSize: 1,
+      images: [coar01, coar02],
+      projctIntroduceText:
+        "필라테스 코아는 기존에 해보지않았던 장르인 헬스 사업을 겨냥하여 제작하였습니다.\n 기획, 기획, 이미지수집, 기능 개발",
+      projectsimple:
+        "필라테스 프로젝트는 앞선 '브라운 브라더'에 이어 \n원페이지(One-page) 형식으로 설계한 포트폴리오로\n헬스 및 웰니스 사업자를 타겟으로 기획하여 \n업종의 전문성을 시각적으로 구현하였습니다.\n실제 필라테스 사업장에서 사용하는 기구 이미지와 \n교육 커리큘럼 콘텐츠를 상세 페이지에 자연스럽게 녹여내었으며,\n사용자의 스크롤 흐름에 맞춘 동적인 레이아웃을 통해 \n서비스의 신뢰도와 몰입감을 높였습니다.",
+      url: "https://www.mmcmso.com/template/mpilates/",
       skills: [
         "그누보드",
         "JavaScript",
