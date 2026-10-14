@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
+import { normalizeLegacyDomain } from "../utils/normalizeLegacyDomain";
 
 function BoardEdit() {
   const { sequenceNumber } = useParams(); // URL에서 게시글 sequenceNumber 가져옴
@@ -27,7 +28,7 @@ function BoardEdit() {
         if (response.status === 200) {
           const { title, content, images } = response.data;
           setTitle(title);
-          setText(content);
+          setText(normalizeLegacyDomain(content));
           setExistingImages(images || []);
         }
       } catch (error) {

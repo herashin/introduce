@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "./BoardList.module.css"; // CSS 모듈을 임포트
+import { normalizeLegacyDomain } from "../utils/normalizeLegacyDomain";
 
 function BoardList() {
   const [posts, setPosts] = useState([]); // 게시글 목록 상태
@@ -140,7 +141,7 @@ function BoardList() {
                   <img
                     src={
                       post.images[0].imageUrl.startsWith("http")
-                        ? post.images[0].imageUrl
+                        ? normalizeLegacyDomain(post.images[0].imageUrl)
                         : `${API_BASE_URL}${post.images[0].imageUrl}`
                     }
                     alt="게시글 섬네일"

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "./BoardDetail.module.css";
+import { normalizeLegacyDomain } from "../utils/normalizeLegacyDomain";
 
 function BoardDetail() {
   const { sequenceNumber } = useParams();
@@ -102,7 +103,7 @@ function BoardDetail() {
       </div>
       <div
         className={styled.content}
-        dangerouslySetInnerHTML={{ __html: board.content }}
+        dangerouslySetInnerHTML={{ __html: normalizeLegacyDomain(board.content) }}
       ></div>
       <button onClick={() => openModal("edit")} className={styled.edit_button}>
         수정하기
